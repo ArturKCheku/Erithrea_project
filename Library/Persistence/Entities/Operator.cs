@@ -1,8 +1,8 @@
-﻿using System;
-
-public class Class1
+﻿namespace ManteHos.Entities
 {
-	public Class1()
-	{
-	}
+    public partial class Operator : Employee
+    {
+        public string ShiftCode { get; set; }
+        public Shift Shift { get; set; }
+    }
 }

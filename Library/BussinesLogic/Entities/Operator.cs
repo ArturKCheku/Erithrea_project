@@ -1,8 +1,15 @@
-﻿using System;
-
-public class Class1
+﻿namespace ManteHos.Entities
 {
-	public Class1()
-	{
-	}
+    public partial class Operator
+    {
+        public Operator() { }
+
+        public Operator(string dni, string fullName, string phone, Area area,
+                        string shiftCode, Shift shift)
+            : base(dni, fullName, phone, area)
+        {
+            ShiftCode = shiftCode;
+            Shift = shift;
+        }
+    }
 }

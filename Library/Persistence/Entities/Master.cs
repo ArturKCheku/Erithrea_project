@@ -1,8 +1,7 @@
-﻿using System;
-
-public class Class1
+﻿namespace ManteHos.Entities
 {
-	public Class1()
-	{
-	}
+    public partial class Master : Employee
+    {
+        public string Department { get; set; }
+    }
 }

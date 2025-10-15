@@ -1,15 +1,21 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-public class Employee
+namespace ManteHos.Entities
 {
-	public String FullName { get; set;}
-	public String Id { get; set; }
-	public String Password { get; set; }
-	
-	public Employee(String FullName, String Id, String Password) 
-	{
-	FullName = fullName;
-	Id = id;
-	Password = password;
-	}
+    public partial class Employee
+    {
+        public Employee()
+        {
+            WorkOrders = new List<WorkOrder>();
+            ReportedIncidents = new List<Incident>();
+        }
+
+        public Employee(string dni, string fullName, string phone, Area area) : this()
+        {
+            DNI = dni;
+            FullName = fullName;
+            Phone = phone;
+            Area = area;
+        }
+    }
 }
