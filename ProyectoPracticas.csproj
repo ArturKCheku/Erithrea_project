@@ -1,4 +1,4 @@
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -6,8 +6,9 @@
     <OutputType>Exe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ConsoleApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -19,6 +20,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>ProyectoPracticas</RootNamespace>
@@ -103,6 +106,7 @@
     <None Include=".vs\2025-L1-Erithrea\v17\DocumentLayout.json" />
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="app.config" />
     <None Include="Library\.vs\Library\FileContentIndex\29c82507-a82c-4619-904e-afd164b3c84c.vsidx" />
     <None Include="Library\.vs\Library\v17\.wsuo" />
     <None Include="Library\.vs\Library\v17\DocumentLayout.json" />
@@ -111,7 +115,6 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\BussinesLogic\Class1.cs" />
     <Compile Include="Library\BussinesLogic\Entities\Area.cs" />
     <Compile Include="Library\BussinesLogic\Entities\Employee.cs" />
     <Compile Include="Library\BussinesLogic\Entities\Head.cs" />
@@ -121,7 +124,6 @@
     <Compile Include="Library\BussinesLogic\Entities\Part.cs" />
     <Compile Include="Library\BussinesLogic\Entities\UsedPart.cs" />
     <Compile Include="Library\BussinesLogic\Entities\WorkOrder.cs" />
-    <Compile Include="Library\Persistence\Class2.cs" />
     <Compile Include="Library\Persistence\Entities\Area.cs" />
     <Compile Include="Library\Persistence\Entities\Employee.cs" />
     <Compile Include="Library\Persistence\Entities\Head.cs" />
@@ -129,6 +131,9 @@
     <Compile Include="Library\Persistence\Entities\Master.cs" />
     <Compile Include="Library\Persistence\Entities\Operator.cs" />
     <Compile Include="Library\Persistence\Entities\Part.cs" />
+    <Compile Include="Library\Persistence\Entities\Priority.cs" />
+    <Compile Include="Library\Persistence\Entities\Shift.cs" />
+    <Compile Include="Library\Persistence\Entities\Status.cs" />
     <Compile Include="Library\Persistence\Entities\UsedPart.cs" />
     <Compile Include="Library\Persistence\Entities\WorkOrder.cs" />
     <Compile Include="Presentation\Class4.cs" />
