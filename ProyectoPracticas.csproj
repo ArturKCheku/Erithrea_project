@@ -115,7 +115,6 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\BussinesLogic\Class1.cs" />
     <Compile Include="Library\BussinesLogic\Entities\Area.cs" />
     <Compile Include="Library\BussinesLogic\Entities\Employee.cs" />
     <Compile Include="Library\BussinesLogic\Entities\Head.cs" />
@@ -125,7 +124,6 @@
     <Compile Include="Library\BussinesLogic\Entities\Part.cs" />
     <Compile Include="Library\BussinesLogic\Entities\UsedPart.cs" />
     <Compile Include="Library\BussinesLogic\Entities\WorkOrder.cs" />
-    <Compile Include="Library\Persistence\Class2.cs" />
     <Compile Include="Library\Persistence\Entities\Area.cs" />
     <Compile Include="Library\Persistence\Entities\Employee.cs" />
     <Compile Include="Library\Persistence\Entities\Head.cs" />
@@ -133,6 +131,9 @@
     <Compile Include="Library\Persistence\Entities\Master.cs" />
     <Compile Include="Library\Persistence\Entities\Operator.cs" />
     <Compile Include="Library\Persistence\Entities\Part.cs" />
+    <Compile Include="Library\Persistence\Entities\Priority.cs" />
+    <Compile Include="Library\Persistence\Entities\Shift.cs" />
+    <Compile Include="Library\Persistence\Entities\Status.cs" />
     <Compile Include="Library\Persistence\Entities\UsedPart.cs" />
     <Compile Include="Library\Persistence\Entities\WorkOrder.cs" />
     <Compile Include="Presentation\Class4.cs" />

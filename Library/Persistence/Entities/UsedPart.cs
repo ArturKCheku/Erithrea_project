@@ -1,8 +1,12 @@
-﻿using System;
-
-public class Class1
+﻿namespace ManteHos.Entities
 {
-	public Class1()
-	{
-	}
+    public partial class UsedPart
+    {
+        public int Id { get; set; }
+        public int Quantity { get; set; }
+
+        // Relaciones
+        public virtual Part Part { get; set; }
+        public virtual WorkOrder WorkOrder { get; set; }
+    }
 }

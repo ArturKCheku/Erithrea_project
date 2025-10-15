@@ -1,8 +1,19 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-public class Class1
+namespace ManteHos.Entities
 {
-	public Class1()
-	{
-	}
+    public partial class Part
+    {
+        public Part()
+        {
+            UsedParts = new List<UsedPart>();
+        }
+
+        public Part(string name, string reference, int stock) : this()
+        {
+            Name = name;
+            Reference = reference;
+            Stock = stock;
+        }
+    }
 }
