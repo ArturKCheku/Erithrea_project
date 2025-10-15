@@ -9,7 +9,6 @@ namespace ManteHos.Entities
         public string Reference { get; set; }
         public int Stock { get; set; }
 
-        // Relaciones
         public virtual ICollection<UsedPart> UsedParts { get; set; }
     }
 }

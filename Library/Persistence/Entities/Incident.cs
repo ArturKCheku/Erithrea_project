@@ -10,9 +10,8 @@ namespace ManteHos.Entities
         public DateTime DateReported { get; set; }
         public Priority Priority { get; set; }
         public Status Status { get; set; }
-        public Shift Shift { get; set; }   // ahora es enum, no clase
+        public Shift Shift { get; set; }  
 
-        // Relaciones
         public virtual Area Area { get; set; }
         public virtual Employee Reporter { get; set; }
     }

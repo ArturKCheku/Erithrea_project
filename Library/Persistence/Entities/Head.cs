@@ -2,6 +2,6 @@
 {
     public partial class Head : Employee
     {
-        public string Office { get; set; }   // oficina o despacho del jefe
+        public string Office { get; set; }   
     }
 }

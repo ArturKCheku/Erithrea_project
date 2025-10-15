@@ -10,7 +10,6 @@ namespace ManteHos.Entities
         public string Description { get; set; }
         public Status Status { get; set; }
 
-        // Relaciones
         public virtual Incident Incident { get; set; }
         public virtual Employee AssignedEmployee { get; set; }
         public virtual ICollection<UsedPart> UsedParts { get; set; }
