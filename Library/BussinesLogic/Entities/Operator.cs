@@ -2,7 +2,9 @@
 {
     public partial class Operator
     {
-        public Operator() { }
+        public Operator() {
+            WorkOrders = new List<WorkOrder>();
+        }
 
         public Operator(string dni, string fullName, string phone, Area area,
                         string shiftCode, Shift shift)
