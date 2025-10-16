@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary.Persistence.Entities
+namespace ManteHosLib.Entities
 {
-    internal class Class1
+    public partial class ManteHosClassDomain1
     {
     }
 }

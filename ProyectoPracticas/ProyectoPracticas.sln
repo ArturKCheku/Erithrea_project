@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 		Class1.cs = Class1.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{E74BA53D-0F83-493E-8217-1909A79F98AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManteHosLib", "ClassLibrary\ManteHosLib.csproj", "{E74BA53D-0F83-493E-8217-1909A79F98AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{F5EA19AB-C683-4DAF-A4F9-A330FE1AF559}"
 	ProjectSection(SolutionItems) = preProject

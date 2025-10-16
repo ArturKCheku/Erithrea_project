@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary.BusinessLogic.Entities
+namespace ManteHosLib.Entities
 {
-    internal class Class1
+    public partial class Head
     {
     }
 }
