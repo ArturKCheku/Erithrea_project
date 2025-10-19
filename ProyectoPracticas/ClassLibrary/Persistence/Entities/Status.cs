@@ -8,6 +8,6 @@ namespace ManteHos.Entities
         Rejected,
         InProgress,
         Pending,
-        Completed,
+        Completed
     }
 }

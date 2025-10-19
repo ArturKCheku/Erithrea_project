@@ -5,6 +5,6 @@ namespace ManteHos.Entities
     {
         Morning,
         Afternoon,
-        Night,
+        Night
     }
 }

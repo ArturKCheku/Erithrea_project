@@ -5,6 +5,6 @@ namespace ManteHos.Entities
     {
         High,
         Medium,
-        Low,
+        Low
     }
 }

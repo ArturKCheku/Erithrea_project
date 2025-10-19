@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ManteHosLib.Entities
 {
-    public partial class Master
+    public partial class Master : Employee
     {
+        public string Department { get; set; }
     }
 }
