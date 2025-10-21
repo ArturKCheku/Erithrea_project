@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Master : Employee
     {
-        public string Department { get; set; }
+        public virtual Area Area { get; set; }
     }
 }

@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Master
     {
         public Master() { }
 
-        public Master(string dni, string fullName, string phone, Area area,
-                      string department)
-            : base(dni, fullName, phone, area)
+        public Master(string fullName, string id, string password) : base(fullName, id, password)
         {
-            Department = department;
+            //Area = area;
         }
 
     }

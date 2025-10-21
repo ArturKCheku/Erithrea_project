@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Head : Employee
     {
-        public string Office { get; set; }
+        
 
     }
 }

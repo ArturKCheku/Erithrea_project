@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Operator
     {
-        public Operator() { }
+        public Operator() {
+            WorkOrders = new List<WorkOrder>();
+        }
 
-        public Operator(string dni, string fullName, string phone, Area area,
-                        string shiftCode, Shift shift)
-            : base(dni, fullName, phone, area)
+        public Operator(string fullName, string id, string password, Shift shift) : base(fullName, id, password)
         {
-            ShiftCode = shiftCode;
             Shift = shift;
+            WorkOrders = new List<WorkOrder>();
         }
 
     }

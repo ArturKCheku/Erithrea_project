@@ -5,23 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Incident
     {
         public Incident() { }
 
-        public Incident(string description, DateTime dateReported,
-                        Priority priority, Status status, Shift shift,
-                        Area area, Employee reporter)
+        public Incident(string department, 
+            string description, System.DateTime reportDate, Employee reporter)
         {
+            
+            Department = department;
             Description = description;
-            DateReported = dateReported;
-            Priority = priority;
-            Status = status;
-            Shift = shift;
-            Area = area;
+            ReportDate = reportDate;
+            //Priority = priority;
+            //Status = status;
             Reporter = reporter;
+            //Area = area;
         }
 
     }

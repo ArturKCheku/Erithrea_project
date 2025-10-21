@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Area
     {
@@ -12,8 +12,8 @@ namespace ManteHosLib.Entities
         public string Name { get; set; }
 
 
-        public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Incident> Incidents { get; set; }
+        public virtual Master Master { get; set; }
 
     }
 }

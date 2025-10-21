@@ -1,6 +1,6 @@
 using System;
 using ManteHos.Entities;
-using ManteHosLib.Entities;
+//using ManteHosLib.Entities;
 
 
 namespace ManteHosObjectDesignTests

@@ -1,4 +1,4 @@
-﻿using ManteHosLib.Entities;
+﻿using ManteHos.Entities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Part
     {
@@ -16,11 +16,14 @@ namespace ManteHosLib.Entities
             UsedParts = new List<UsedPart>();
         }
 
-        public Part(string name, string reference, int stock) : this()
+        public Part(string code, int currentQuantity, string description, int minimumQuantity, string unitOfMeasure,float unitPrice) : this()
         {
-            Name = name;
-            Reference = reference;
-            Stock = stock;
+            Code = code;
+            Description = description;
+            UnitPrice = unitPrice;
+            CurrentQuantity = currentQuantity;
+            MinimunQuantity = minimumQuantity;
+            UnitOfMeasure = unitOfMeasure;
         }
     }
 

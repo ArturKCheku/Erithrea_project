@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
     public partial class Part
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Reference { get; set; }
-        public int Stock { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+        public float UnitPrice { get; set; }
+        public int CurrentQuantity { get; set; }
+        public int MinimunQuantity { get; set; }
+        public string UnitOfMeasure { get; set; }
 
         public virtual ICollection<UsedPart> UsedParts { get; set; }
 

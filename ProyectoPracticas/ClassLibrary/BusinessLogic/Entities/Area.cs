@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace ManteHosLib.Entities
+namespace ManteHos.Entities
 {
-    public partial class Area : Master
+    public partial class Area 
     {
         public Area()
         {
-            Employees = new List<Employee>();
             Incidents = new List<Incident>();
         }
 
-        public Area(string name, int id) : this()
+        public Area(string name, Master master) : this()
         {
             Name = name;
-            Id = id;
+            Master = master;
+            
         }
     }
 
