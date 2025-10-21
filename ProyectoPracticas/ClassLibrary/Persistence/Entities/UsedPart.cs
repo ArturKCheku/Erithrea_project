@@ -13,7 +13,6 @@ namespace ManteHos.Entities
         public int Quantity { get; set; }
         public bool Needed { get; set; }
         public virtual Part Part { get; set; }
-        public virtual WorkOrder WorkOrder { get; set; }
 
     }
 }

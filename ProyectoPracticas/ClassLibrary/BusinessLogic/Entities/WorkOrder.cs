@@ -15,7 +15,7 @@ namespace ManteHos.Entities
             Operators = new List<Operator>();
         }
         
-        public WorkOrder(DateTime startDate, Incident incident) //: this()
+        public WorkOrder(DateTime startDate, Incident incident): this()
         {
             StartDate = startDate;
             //RepairReport = repairReport;

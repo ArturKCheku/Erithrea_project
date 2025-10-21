@@ -13,15 +13,17 @@ namespace ManteHos.Entities
         public UsedPart(int quantity, Part part) {
             Quantity = quantity;
             Part = part;
+            Needed = Part.MinimunQuantity > Part.CurrentQuantity - quantity;
+            if(!Needed) Part.CurrentQuantity -= quantity;
 
         }
 
         public UsedPart(bool needed,  WorkOrder workOrder):this()
         {
             //Quantity = quantity;
-            Needed = true;
+            //Needed = needed;
             //Part = part;
-            WorkOrder = workOrder;
+            //WorkOrder = workOrder;
         }
 
     }
