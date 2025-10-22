@@ -72,6 +72,10 @@
     <Compile Include="Persistence\Entities\Status.cs" />
     <Compile Include="Persistence\Entities\UsedPart.cs" />
     <Compile Include="Persistence\Entities\WorkOrder.cs" />
+    <Compile Include="Persistence\EntityFrameWorklmp\DBContextISW.cs" />
+    <Compile Include="Persistence\EntityFrameWorklmp\EntityFrameWorkDAL.cs" />
+    <Compile Include="Persistence\EntityFrameWorklmp\IDAL.cs" />
+    <Compile Include="Persistence\EntityFrameWorklmp\ManteHosDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
