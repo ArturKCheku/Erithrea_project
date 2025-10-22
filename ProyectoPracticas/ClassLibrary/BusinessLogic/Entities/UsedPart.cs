@@ -18,13 +18,5 @@ namespace ManteHos.Entities
 
         }
 
-        public UsedPart(bool needed,  WorkOrder workOrder):this()
-        {
-            //Quantity = quantity;
-            //Needed = needed;
-            //Part = part;
-            //WorkOrder = workOrder;
-        }
-
     }
 }

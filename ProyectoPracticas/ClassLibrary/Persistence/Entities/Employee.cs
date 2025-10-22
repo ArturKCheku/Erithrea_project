@@ -12,8 +12,6 @@ namespace ManteHos.Entities
         public string Id { get; set; }
         public string Password { get; set; }
 
-
-        
         
         public virtual ICollection<Incident> ReportedIncidents { get; set; }
 

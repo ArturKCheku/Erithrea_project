@@ -12,6 +12,7 @@ namespace ManteHos.Entities
 
         public Head(string fullName, string id, string password) : base(fullName, id, password)
         {
+
         }
 
     }

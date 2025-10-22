@@ -18,13 +18,11 @@ namespace ManteHos.Entities
         public string RejectionReason { get; set; }
         public float CostOfUsedParts { get; set; } = 0;
 
-        // Relación con Area
+        
         public virtual Area Area { get; set; }
-
-        // Relación con Employee (Reporter)
+       
         public virtual Employee Reporter { get; set; }
 
-        // Relación con WorkOrder
         public virtual WorkOrder WorkOrder { get; set; }
 
     }
