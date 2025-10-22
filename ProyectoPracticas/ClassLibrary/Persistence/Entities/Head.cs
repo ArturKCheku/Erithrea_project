@@ -8,7 +8,6 @@ namespace ManteHos.Entities
 {
     public partial class Head : Employee
     {
-        
 
     }
 }

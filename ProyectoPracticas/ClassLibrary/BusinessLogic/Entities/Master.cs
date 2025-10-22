@@ -12,7 +12,7 @@ namespace ManteHos.Entities
 
         public Master(string fullName, string id, string password) : base(fullName, id, password)
         {
-            //Area = area;
+            
         }
 
     }

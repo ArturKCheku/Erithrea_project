@@ -18,7 +18,6 @@ namespace ManteHos.Entities
         public WorkOrder(DateTime startDate, Incident incident): this()
         {
             StartDate = startDate;
-            //RepairReport = repairReport;
             Incident = incident;
         }
 

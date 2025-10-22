@@ -2,7 +2,6 @@
 using System;
 using System.Reflection;
 using ManteHos.Entities;
-//using ManteHosLib.Entities;
 
 
 namespace ManteHosObjectDesignTests
