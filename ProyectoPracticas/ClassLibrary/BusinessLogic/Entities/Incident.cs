@@ -21,6 +21,7 @@ namespace ManteHos.Entities
             //Priority = priority;
             //Status = status;
             Reporter = reporter;
+            Priority = Priority.Low;
             //Area = area;
         }
 

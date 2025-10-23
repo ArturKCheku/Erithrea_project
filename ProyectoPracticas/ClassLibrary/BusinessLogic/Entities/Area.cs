@@ -18,7 +18,7 @@ namespace ManteHos.Entities
         {
             Name = name;
             Master = master;
-            
+
         }
     }
 
