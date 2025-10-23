@@ -23,7 +23,6 @@ namespace ManteHos.Entities
         [Required]
         public virtual Incident Incident { get; set; }
 
-        [InverseProperty("WorkOrder")]
         public virtual ICollection<UsedPart> UsedParts { get; set; }
 
         public virtual ICollection<Operator> Operators { get; set; }

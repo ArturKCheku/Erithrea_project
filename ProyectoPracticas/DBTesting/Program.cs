@@ -124,6 +124,7 @@ namespace DBTest
             dal.Insert<WorkOrder>(workOrder1);
             dal.Commit();
 
+            /*
             workOrder1.AddUsedPart(2, part1);
             workOrder1.AddUsedPart(5, part2);
             dal.Update<WorkOrder>(workOrder1);
@@ -132,6 +133,7 @@ namespace DBTest
             incident1.WorkOrder = workOrder1;
             dal.Update<Incident>(incident1);
             dal.Commit();
+            */
         }
 
         // Copiar a partir de aquí
