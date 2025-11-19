@@ -25,12 +25,12 @@ namespace ManteHos.Entities
         [InverseProperty("UsedParts")]
         public virtual Part Part { get; set; }
 
-        [Required]
+        /*[Required]
         [ForeignKey("WorkOrder")]
         public int WorkOrderId { get; set; }
 
         [InverseProperty("UsedParts")]
         public virtual WorkOrder WorkOrder { get; set; }
-
+        */
     }
 }
