@@ -59,10 +59,11 @@ namespace ManteHos.Persistence
                 .WithRequired(i => i.Area)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<WorkOrder>()
+          /*  modelBuilder.Entity<WorkOrder>()
                 .HasMany(w => w.UsedParts)
                 .WithRequired(up => up.WorkOrder)
                 .WillCascadeOnDelete(false);
+          */
 
             modelBuilder.Entity<Part>()
                 .HasMany(p => p.UsedParts)

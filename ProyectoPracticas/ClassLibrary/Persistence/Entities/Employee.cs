@@ -14,6 +14,7 @@ namespace ManteHos.Entities
         public string FullName { get; set; }
 
         [Required]
+        [Key]
         public string Id { get; set; }
 
         [Required]

@@ -22,26 +22,16 @@ namespace ManteHos.Entities
 
         public void AddOperator(Operator op)
         {
-            if (Operators == null)
-                Operators = new List<Operator>();
-
             if (!Operators.Contains(op))
-            {
                 Operators.Add(op);
-
-                if (op.WorkOrders == null)
-                    op.WorkOrders = new List<WorkOrder>();
-                op.WorkOrders.Add(this);
-            }
+            
         }
 
-        public void AddUsedPart(int quantity, Part part)
-        {
-            if (UsedParts == null)
-                UsedParts = new List<UsedPart>();
-
-            var usedPart = new UsedPart(quantity, part);
+        public UsedPart AddUsedPart(int quantity, Part part)
+        { 
+            UsedPart usedPart = new UsedPart(quantity, part);
             UsedParts.Add(usedPart);
+            return usedPart;
         }
     }
 }
