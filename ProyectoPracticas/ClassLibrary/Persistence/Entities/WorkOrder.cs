@@ -27,7 +27,5 @@ namespace ManteHos.Entities
         public virtual ICollection<UsedPart> UsedParts { get; set; }
 
         public virtual ICollection<Operator> Operators { get; set; }
-
-        //public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }
