@@ -32,6 +32,11 @@ namespace ManteHos.Entities
 
 
 
+
+
+
+        [Required]
+
         [InverseProperty("Incidents")]
         public virtual Area Area { get; set; }
 
