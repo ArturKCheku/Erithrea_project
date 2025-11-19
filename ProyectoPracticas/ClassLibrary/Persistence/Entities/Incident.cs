@@ -26,13 +26,11 @@ namespace ManteHos.Entities
         public Status Status { get; set; } = Status.Created;
         public string RejectionReason { get; set; }
 
-
-
-
+        [Required]
+        public float CostOfUsedParts { get; set; } = 0;
 
 
         [Required]
-
         [InverseProperty("Incidents")]
         public virtual Area Area { get; set; }
 
