@@ -14,16 +14,12 @@ namespace ManteHos.Entities
         [Key]
         public int Id { get; set; }
 
-        
         public System.DateTime ReportDate { get; set; }
 
-        
         public string Department { get; set; }
 
-        
         public string Description { get; set; }
 
-        
         public Priority Priority { get; set; } = Priority.Low;
 
         [Required]
@@ -47,6 +43,5 @@ namespace ManteHos.Entities
         [Required]
         [InverseProperty("Incident")]
         public virtual WorkOrder WorkOrder { get; set; }
-
     }
 }
