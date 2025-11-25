@@ -11,10 +11,7 @@ namespace ManteHos.Entities
 {
     public partial class Operator : Employee
     {
-        [Required]
-        public string ShiftCode { get; set; }
 
-        [Required]
         public Shift Shift { get; set; }
 
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }

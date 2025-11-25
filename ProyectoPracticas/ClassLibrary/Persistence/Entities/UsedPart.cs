@@ -22,7 +22,6 @@ namespace ManteHos.Entities
         public bool Needed { get; set; }
 
         [Required]
-        [InverseProperty("UsedParts")]
         public virtual Part Part { get; set; }
 
         /*[Required]

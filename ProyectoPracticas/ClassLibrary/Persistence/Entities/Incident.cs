@@ -29,20 +29,16 @@ namespace ManteHos.Entities
 
         [Required]
         public Status Status { get; set; } = Status.Created;
+        [Required]
         public string RejectionReason { get; set; }
 
 
 
-        [Required]
-        [InverseProperty("Incidents")]
         public virtual Area Area { get; set; }
 
         [Required]
-        [InverseProperty("ReportedIncidents")]
         public virtual Employee Reporter { get; set; }
 
-        [Required]
-        [InverseProperty("Incident")]
         public virtual WorkOrder WorkOrder { get; set; }
 
     }
