@@ -118,11 +118,41 @@ namespace DBTest
             dal.Insert<Incident>(incident1);
             dal.Commit();
 
-            Console.WriteLine("\n// CREACIÓN DE ÓRDENES DE TRABAJO");
+            /*Console.WriteLine("\n// CREACIÓN DE ÓRDENES DE TRABAJO");
             WorkOrder workOrder1 = new WorkOrder(DateTime.Now, incident1);
             workOrder1.AddOperator(op1);
             dal.Insert<WorkOrder>(workOrder1);
             dal.Commit();
+            */
+            Console.WriteLine("\n// CREACIÓN DE ÓRDENES DE TRABAJO");
+            WorkOrder w1 = new WorkOrder
+            {
+                StartDate = DateTime.Now,
+                EndDate = null,
+                RepairReport = "some",
+                Incident = incident1,
+                Operators = new List<Operator> { op1 }
+
+
+
+            }; dal.Insert<WorkOrder>(w1);
+            dal.Commit();
+
+            UsedPart up1 = new UsedPart
+            {
+                Part = part1,
+                Quantity = 2,
+                Needed = true
+            };
+            dal.Insert<UsedPart>(up1);
+            dal.Commit();
+
+            w1.UsedParts.Add(up1);
+            part1.UsedParts.Add(up1);
+            part1.CurrentQuantity -= up1.Quantity;
+            dal.Commit();
+
+
 
             /*
             workOrder1.AddUsedPart(2, part1);
@@ -152,7 +182,7 @@ namespace DBTest
                 Console.WriteLine("   Code: " + p.Code + " Description: " + p.Description + " CurrentQuantity: " + p.CurrentQuantity);
 
             Console.WriteLine("\nÁreas, Indicencias, Órdenes de trabajo y piezas pedidas creadas:");
-            foreach(Area a in dal.GetAll<Area>())
+            foreach (Area a in dal.GetAll<Area>())
             {
                 Console.WriteLine("   Name: " + a.Name);
                 foreach (Incident i in a.Incidents)
@@ -177,4 +207,3 @@ namespace DBTest
     }
 
 }
-
