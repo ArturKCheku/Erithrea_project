@@ -24,7 +24,7 @@ namespace ManteHos.Entities
 
         [Required]
         public Status Status { get; set; } = Status.Created;
-        [Required]
+
         public string RejectionReason { get; set; }
 
         [Required]
