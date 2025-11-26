@@ -14,12 +14,14 @@ namespace ManteHos.Entities
             Incidents = new List<Incident>();
         }
 
+        
+
         public Area(string name, Master master) : this()
         {
-            Name = name;
             Master = master;
-
+            Name = name;
         }
+
     }
 
 }

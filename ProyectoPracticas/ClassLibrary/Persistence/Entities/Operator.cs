@@ -13,7 +13,7 @@ namespace ManteHos.Entities
     {
 
         public Shift Shift { get; set; }
-
+        [InverseProperty("Operators")]
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
 
     }

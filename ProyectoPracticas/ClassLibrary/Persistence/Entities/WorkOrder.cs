@@ -11,22 +11,24 @@ namespace ManteHos.Entities
 {
     public partial class WorkOrder
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int Id { get; set; }
-
-        [Required]
+        
         public DateTime StartDate { get; set; }
         
         public DateTime? EndDate { get; set; }
-        [Required]
+        
         public string RepairReport { get; set; }
 
+
         [Required]
+        [InverseProperty("WorkOrder")]
         public virtual Incident Incident { get; set; }
-
+        
         public virtual ICollection<UsedPart> UsedParts { get; set; }
-
+        [InverseProperty("WorkOrders")]
         public virtual ICollection<Operator> Operators { get; set; }
+
+        
     }
 }

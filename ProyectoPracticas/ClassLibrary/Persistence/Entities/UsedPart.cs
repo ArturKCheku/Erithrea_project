@@ -11,25 +11,18 @@ namespace ManteHos.Entities
 {
     public partial class UsedPart
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None), Key()]
         public int Id { get; set; }
 
-        [Required]
+        
         public int Quantity { get; set; }
 
-        [Required]
+        
         public bool Needed { get; set; }
 
         [Required]
         public virtual Part Part { get; set; }
 
-        /*[Required]
-        [ForeignKey("WorkOrder")]
-        public int WorkOrderId { get; set; }
-
-        [InverseProperty("UsedParts")]
-        public virtual WorkOrder WorkOrder { get; set; }
-        */
+        
     }
 }

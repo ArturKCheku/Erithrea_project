@@ -11,7 +11,7 @@ namespace ManteHos.Entities
 {
     public partial class Incident
     {
-        [Key]
+        
         public int Id { get; set; }
 
         public System.DateTime ReportDate { get; set; }
@@ -22,20 +22,22 @@ namespace ManteHos.Entities
 
         public Priority Priority { get; set; } = Priority.Low;
 
-        [Required]
+        
         public Status Status { get; set; } = Status.Created;
 
-        public string RejectionReason { get; set; }
+        public string RejectionReason { get; set; } = null;
 
-        [Required]
+        
         public float CostOfUsedParts { get; set; } = 0;
 
-
+        [InverseProperty("Incidents")]
         public virtual Area Area { get; set; }
 
         [Required]
+        [InverseProperty("ReportedIncidents")]
         public virtual Employee Reporter { get; set; }
 
+        [InverseProperty("Incident")]
         public virtual WorkOrder WorkOrder { get; set; }
     }
 }

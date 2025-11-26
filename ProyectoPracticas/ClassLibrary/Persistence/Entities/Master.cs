@@ -4,12 +4,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace ManteHos.Entities
 {
     public partial class Master : Employee
     {
+        [InverseProperty("Master")]
         public virtual Area Area { get; set; }
     }
 }

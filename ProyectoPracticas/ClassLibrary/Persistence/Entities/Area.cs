@@ -10,16 +10,19 @@ namespace ManteHos.Entities
 {
     public partial class Area
     {
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.None), Key()]
+        [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }
 
+        [InverseProperty("Area")]
         public virtual ICollection<Incident> Incidents { get; set; }
 
         [Required]
+        //[InverseProperty("Master")]
         public virtual Master Master { get; set; }
+
+
 
     }
 }

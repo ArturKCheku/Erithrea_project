@@ -10,22 +10,22 @@ namespace ManteHos.Entities
 {
     public partial class Part
     {
-        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None), Key()]
         public string Code { get; set; }
 
-        [Required]
+        
         public string Description { get; set; }
 
-        [Required]
+        
         public float UnitPrice { get; set; }
 
-        [Required]
+        
         public int CurrentQuantity { get; set; }
 
-        [Required]
+        
         public int MinimunQuantity { get; set; }
 
-        [Required]
+        
         public string UnitOfMeasure { get; set; }
 
         public virtual ICollection<UsedPart> UsedParts { get; set; }

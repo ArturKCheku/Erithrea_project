@@ -37,50 +37,52 @@ namespace ManteHos.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
-            modelBuilder.Entity<Incident>()
-                .HasOptional(i => i.WorkOrder) 
-                .WithRequired(w => w.Incident) 
-                .WillCascadeOnDelete(false);
+            /*            
+                        modelBuilder.Entity<Incident>()
+                            .HasOptional(i => i.WorkOrder) 
+                            .WithRequired(w => w.Incident) 
+                            .WillCascadeOnDelete(false);
 
-            
-            modelBuilder.Entity<Area>()
-                .HasRequired(a => a.Master) 
-                .WithOptional(m => m.Area) 
-                .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Employee>()
-                .HasMany(e => e.ReportedIncidents)
-                .WithRequired(i => i.Reporter)
-                .WillCascadeOnDelete(false);
+                        modelBuilder.Entity<Area>()
+                            .HasRequired(a => a.Master) 
+                            .WithOptional(m => m.Area) 
+                            .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Area>()
-                .HasMany(a => a.Incidents)
-                .WithRequired(i => i.Area)
-                .WillCascadeOnDelete(false);
+                        modelBuilder.Entity<Employee>()
+                            .HasMany(e => e.ReportedIncidents)
+                            .WithRequired(i => i.Reporter)
+                            .WillCascadeOnDelete(false);
 
-          /*  modelBuilder.Entity<WorkOrder>()
-                .HasMany(w => w.UsedParts)
-                .WithRequired(up => up.WorkOrder)
-                .WillCascadeOnDelete(false);
-          */
+                        modelBuilder.Entity<Area>()
+                            .HasMany(a => a.Incidents)
+                            .WithRequired(i => i.Area)
+                            .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Part>()
-                .HasMany(p => p.UsedParts)
-                .WithRequired(up => up.Part)
-                .WillCascadeOnDelete(false);
+                        modelBuilder.Entity<WorkOrder>()
+                            .HasMany(w => w.UsedParts)
+                            .WithRequired(up => up.WorkOrder)
+                            .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<WorkOrder>()
-                .HasMany(w => w.Operators)
-                .WithMany(o => o.WorkOrders)
-                .Map(m =>
-                {
-                    m.ToTable("WorkOrderOperators");
-                    m.MapLeftKey("WorkOrderId");
-                    m.MapRightKey("OperatorId");
-                });
+
+                        modelBuilder.Entity<Part>()
+                            .HasMany(p => p.UsedParts)
+                            .WithRequired(up => up.Part)
+                            .WillCascadeOnDelete(false);
+
+                        modelBuilder.Entity<WorkOrder>()
+                            .HasMany(w => w.Operators)
+                            .WithMany(o => o.WorkOrders)
+                            .Map(m =>
+                            {
+                                m.ToTable("WorkOrderOperators");
+                                m.MapLeftKey("WorkOrderId");
+                                m.MapRightKey("OperatorId");
+                            });
+
 
             base.OnModelCreating(modelBuilder);
+*/
         }
 
         // Generic method to clear all the data (except some relations if needed)

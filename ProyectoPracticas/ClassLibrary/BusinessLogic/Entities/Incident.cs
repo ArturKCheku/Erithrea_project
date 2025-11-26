@@ -11,20 +11,27 @@ namespace ManteHos.Entities
     {
         public Incident() { }
 
-        public Incident(string department, 
-            string description, System.DateTime reportDate, Employee reporter)
+        public Incident(string department, string description, DateTime reportDate, 
+            Priority priority, Status status, Employee reporter, Area area = null, string rejectionReason = null) : this()
         {
             
             Department = department;
             Description = description;
             ReportDate = reportDate;
-            //Priority = priority;
-            //Status = status;
+            Priority = priority;
+            Status = status;
             Reporter = reporter;
-            Status = Status.Created;
-            Priority = Priority.Low;
+            //Status = Status.Created;
+            //Priority = Priority.Low;
             CostOfUsedParts = 0;
-            //Area = area;
+            Area = area;
+            RejectionReason = rejectionReason;
+        }
+
+        public Incident(string department, string description,DateTime reportDate, Employee reporter)
+            : this(department, description, reportDate, Priority.Medium, Status.Created, reporter) 
+        { 
+        
         }
 
     }
