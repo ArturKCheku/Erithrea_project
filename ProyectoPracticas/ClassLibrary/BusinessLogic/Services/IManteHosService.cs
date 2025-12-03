@@ -19,6 +19,10 @@ namespace ManteHos.Services
         //
         // A partir de aquí los necesarios para los CU solicitados
         //
+        Employee login(Employee user, string password);//si no funciona, torna null o una excepció, i si no, el usuari identificat
+        Employee logout();//Torna el usuari que ha eixit per comoditat de tornar a iniciar sessió si tenim temps de implementar-ho
+        void report(Employee employee, Incident incidente);
+        
 
     }
 }
