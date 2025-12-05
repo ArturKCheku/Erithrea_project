@@ -14,10 +14,12 @@ namespace ManteHos.Services
     public class ManteHosService: IManteHosService
     {
         private readonly IDAL dal;
+        private Employee loggedEmployee;
 
         public ManteHosService(IDAL dal)
         {
             this.dal = dal;
+            this.loggedEmployee = null;
         }
 
         /// <summary>
@@ -26,6 +28,7 @@ namespace ManteHos.Services
         public void RemoveAllData()
         {
             dal.RemoveAllData();
+            loggedEmployee = null;
         }
 
         /// <summary>
@@ -117,5 +120,35 @@ namespace ManteHos.Services
         // Resto de metodos necesarios para el servicio
         //
 
+        public void Login(string id, string password)
+        {
+            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(password))
+                throw new ServiceException("Id y password son requerits.");
+
+            Employee employee = dal.GetById<Employee>(id);
+
+            if(employee == null)
+            {
+                throw new ServiceException("User Id no trobat.");
+            }
+
+            if(employee.Password != password)
+            {
+                throw new ServiceException("Password incorrecta.");
+            }
+
+            this.loggedEmployee = employee;
+
+        }
+
+        public void Logout()
+        {
+            this.loggedEmployee = null;
+        }
+
+        public Employee GetLoggedEmployee()
+        {
+            return this.loggedEmployee;
+        }
     }
 }
