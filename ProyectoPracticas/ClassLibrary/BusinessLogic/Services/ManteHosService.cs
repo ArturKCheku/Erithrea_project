@@ -151,13 +151,78 @@ namespace ManteHos.Services
             return this.loggedEmployee;
         }
 
-        public IEnumerable<Incident> getPendingIncidents();
+
+        public void reportIncident(Incident incident)
         {
-            //Comprova si qui fa la petició de la lllista es el Head, si no, trau excepció
-            if(this.loggedEmployee == null || !(this.loggedEmployee is Head))
-                throw new ServiceException("Només el Head pot fer aquesta petició");
-            dal.GetWhere<Incident>(x => x.Status == Status.Created);
+            if (loggedEmployee == null)
+            {
+                throw new ServiceException("Es necessari estar loggeat per a reportar un incident");
+            }
+            if (string.IsNullOrWhiteSpace(incident.Description))
+            {
+                throw new ServiceException("Es requereix una descripcio");
+            }
+            if (string.IsNullOrWhiteSpace(incident.Department))
+            {
+                throw new ServiceException("Es requereix indicar el departament");
+            }
+
+            dal.Insert<Incident>(incident);
+            dal.Commit();
         }
-    
+
+        public IEnumerable<Incident> getPendingIncidents()
+        {
+            if(loggedEmployee == null || !(loggedEmployee is Head))
+            {
+                throw new ServiceException("Sols Head pot accedir");
+            }
+            return dal.GetWhere<Incident>(x => x.Status == Status.Created);
+        }
+        
+
+        public void AcceptIncident(int incidentId, int areaId, Priority priority)
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Head)) 
+            {
+                throw new ServiceException("Sols Head pot accedir");
+            }
+            Incident incident = dal.GetById<Incident>(incidentId);
+            if (incident == null) throw new ServiceException("No es troba incident");
+
+            if(incident.Status != Status.Created)
+            {
+                throw new ServiceException("Sols es pot acceptar un incident amb el estat 'created'. ");
+            }
+
+            Area area = dal.GetById<Area>(areaId);
+            if (area == null) throw new ServiceException("No es troba area");
+
+            incident.Area = area;
+            incident.Priority = priority;
+            incident.Status = Status.Accepted;
+
+            dal.Commit();
+        }
+
+        public void RejectIncident(int incidentId, string rao)
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Head))
+            {
+                throw new ServiceException("Sols Head pot accedir");
+            }
+
+            if (string.IsNullOrEmpty(rao))
+            {
+                throw new ServiceException("Es requereix una rao");
+            }
+
+            Incident incident = dal.GetById<Incident>(incidentId);
+            incident.RejectionReason = rao;
+            incident.Status = Status.Rejected;
+
+            dal.Commit();
+        }
+
     }
 }

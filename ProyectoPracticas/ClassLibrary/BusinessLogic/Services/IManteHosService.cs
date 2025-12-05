@@ -30,9 +30,12 @@ namespace ManteHos.Services
         Employee GetLoggedEmployee();
         void reportIncident(Incident incident);//Si el incident fora null, tira
                                                //una excepció, si el Employee es null, tira excepció
+
+        IEnumerable<Incident> getPendingIncidents();
+        
         void AcceptIncident(int incidentId, int areaId, Priority priority);
         void RejectIncident(int incidentId, string rao);
-
+        
 
 
     }
