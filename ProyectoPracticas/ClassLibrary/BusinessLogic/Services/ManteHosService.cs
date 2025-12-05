@@ -11,7 +11,7 @@ using ManteHos.Persistence;
 
 namespace ManteHos.Services
 {
-    public class ManteHosService: IManteHosService
+    public class ManteHosService : IManteHosService
     {
         private readonly IDAL dal;
         private Employee loggedEmployee;
@@ -127,12 +127,12 @@ namespace ManteHos.Services
 
             Employee employee = dal.GetById<Employee>(id);
 
-            if(employee == null)
+            if (employee == null)
             {
                 throw new ServiceException("User Id no trobat.");
             }
 
-            if(employee.Password != password)
+            if (employee.Password != password)
             {
                 throw new ServiceException("Password incorrecta.");
             }
@@ -150,5 +150,14 @@ namespace ManteHos.Services
         {
             return this.loggedEmployee;
         }
+
+        public IEnumerable<Incident> getPendingIncidents();
+        {
+            //Comprova si qui fa la petició de la lllista es el Head, si no, trau excepció
+            if(this.loggedEmployee == null || !(this.loggedEmployee is Head))
+                throw new ServiceException("Només el Head pot fer aquesta petició");
+            dal.GetWhere<Incident>(x => x.Status == Status.Created);
+        }
+    
     }
 }

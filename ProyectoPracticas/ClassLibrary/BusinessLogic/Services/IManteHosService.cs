@@ -28,6 +28,12 @@ namespace ManteHos.Services
         void Login(string id, string password);
         void Logout();
         Employee GetLoggedEmployee();
+        void reportIncident(Incident incident);//Si el incident fora null, tira
+                                               //una excepció, si el Employee es null, tira excepció
+        void AcceptIncident(int incidentId, int areaId, Priority priority);
+        void RejectIncident(int incidentId, string rao);
+
+
 
     }
 }
