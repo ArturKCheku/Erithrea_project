@@ -19,7 +19,7 @@ namespace ManteHos.Services
         public ManteHosService(IDAL dal)
         {
             this.dal = dal;
-            this.loggedEmployee = null;
+            //this.loggedEmployee = null;
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace ManteHos.Services
         public void RemoveAllData()
         {
             dal.RemoveAllData();
-            loggedEmployee = null;
+            //loggedEmployee = null;
         }
 
         /// <summary>
@@ -224,5 +224,76 @@ namespace ManteHos.Services
             dal.Commit();
         }
 
+        public IEnumerable<Incident> GetIncidentsMaster()
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Master))
+            {
+                throw new ServiceException("Sols Master pot accedir");
+            }
+            Master actualMaster = dal.GetById<Master>(loggedEmployee.Id);
+
+            if(actualMaster.Area == null)
+            {
+                throw new ServiceException("No hi ha area asignada per al Master actual.");
+            }
+
+            return dal.GetWhere<Incident>(x => x.Area.Id == actualMaster.Area.Id &&
+                                              (x.Status == Status.Accepted || x.Status == Status.InProgress));
+        }
+
+        public IEnumerable<Operator> GetAllOperators()
+        {
+            return dal.GetAll<Operator>();
+        }
+
+        public void OperatorToIncident(int incidentId, string operatorId)
+        {
+            if(loggedEmployee == null || !(loggedEmployee is Master))
+            {
+                throw new ServiceException("Sols Master pot accedir");
+            }
+
+            Incident incident = dal.GetById<Incident>(incidentId);
+            Operator op = dal.GetById<Operator>(operatorId);
+
+            Master actualMaster = (Master)loggedEmployee;
+
+            if(incident.Area == null || incident.Area.Id != actualMaster.Area.Id)
+            {
+                throw new ServiceException("Sols pots accedir a Incidents de la teua mateixa Area");
+            }
+
+            if (incident.WorkOrder == null)
+            {
+                WorkOrder nWorkOrder = new WorkOrder(); //
+                incident.WorkOrder = nWorkOrder;
+                incident.Status = Status.InProgress;
+
+            }
+
+            if (!incident.WorkOrder.Operators.Contains(op))
+            {
+                incident.WorkOrder.Operators.Add(op);
+            }
+            else
+            {
+                throw new ServiceException("El operator ya esta te asignat un WorkOrder.");
+            }
+
+            dal.Commit();
+
+        }
+
+        /*
+        public IEnumerable<WorkOrder> GetWorkOrders()
+        {
+            return <WorkOrder>;
+        }
+
+        public void CloseWorkOrder(int workOrderId, string repairReport)
+        {
+
+        }
+        */
     }
 }

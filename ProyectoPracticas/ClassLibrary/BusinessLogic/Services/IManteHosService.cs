@@ -35,6 +35,17 @@ namespace ManteHos.Services
         
         void AcceptIncident(int incidentId, int areaId, Priority priority);
         void RejectIncident(int incidentId, string rao);
+
+
+        IEnumerable<Incident> GetIncidentsMaster();
+
+        IEnumerable<Operator> GetAllOperators();
+
+        void OperatorToIncident(int incidentId, string operatorId);
+
+        IEnumerable<WorkOrder> GetWorkOrders();
+
+        void CloseWorkOrder(int workOrder, string repairReport);
         
 
 
