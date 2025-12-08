@@ -284,16 +284,50 @@ namespace ManteHos.Services
 
         }
 
-        /*
+        
         public IEnumerable<WorkOrder> GetWorkOrders()
         {
-            return <WorkOrder>;
-        }
+            if (loggedEmployee == null || !(loggedEmployee is Operator))
+            {
+                throw new ServiceException("Sols Operator pot accedir.");
+            }
+            string operatorId = loggedEmployee.Id;
 
+            return dal.GetWhere<WorkOrder>(wo => wo.EndDate == null && wo.Operators.Any(op => op.Id == operatorId));
+        }
+        
         public void CloseWorkOrder(int workOrderId, string repairReport)
         {
+            if (loggedEmployee == null || !(loggedEmployee is Operator))
+            {
+                throw new ServiceException("Sols Operator pot accedir.");
+            }
+            string operatorId = loggedEmployee.Id;
+
+            WorkOrder wo = dal.GetById<WorkOrder>(workOrderId);
+            if (wo == null) throw new ServiceException("No s'ha trobat workOrder");
+
+            if (!wo.Operators.Any(op => op.Id == operatorId))
+            {
+                throw new ServiceException("El Operator no esta asignat a ixe workOrder");
+            }
+
+            if(wo.UsedParts.Any(up=> up.Needed == true))
+            {
+                throw new ServiceException("No es pot tancar el workOrder. N'hi han pendents parts Needed.");
+            }
+
+            wo.RepairReport = repairReport;
+            wo.EndDate = DateTime.Now;
+
+            if(wo.Incident != null)
+            {
+                wo.Incident.Status = Status.Completed;
+            }
+
+            dal.Commit();
 
         }
-        */
+        
     }
 }

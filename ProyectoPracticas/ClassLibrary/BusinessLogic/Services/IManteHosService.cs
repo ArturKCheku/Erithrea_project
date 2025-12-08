@@ -42,7 +42,7 @@ namespace ManteHos.Services
         IEnumerable<Operator> GetAllOperators();
 
         void OperatorToIncident(int incidentId, string operatorId);
-
+        
         IEnumerable<WorkOrder> GetWorkOrders();
 
         void CloseWorkOrder(int workOrder, string repairReport);
