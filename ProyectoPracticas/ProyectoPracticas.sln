@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManteHosObjectDesignTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManteHosPersistenceTests", "ManteHosPersistenceTests\ManteHosPersistenceTests.csproj", "{2F43F354-5D3C-48BA-A632-00D79D6607EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBTesting", "DBTesting\DBTesting.csproj", "{D20B479F-7D03-47C2-9282-4C10CA1889D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBTest", "DBTesting\DBTest.csproj", "{D20B479F-7D03-47C2-9282-4C10CA1889D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
