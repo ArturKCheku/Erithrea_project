@@ -11,13 +11,15 @@ using ManteHos.Persistence;
 
 namespace ManteHos.Services
 {
-    public class ManteHosService: IManteHosService
+    public class ManteHosService : IManteHosService
     {
         private readonly IDAL dal;
+        private Employee loggedEmployee;
 
         public ManteHosService(IDAL dal)
         {
             this.dal = dal;
+            //this.loggedEmployee = null;
         }
 
         /// <summary>
@@ -26,6 +28,7 @@ namespace ManteHos.Services
         public void RemoveAllData()
         {
             dal.RemoveAllData();
+            //loggedEmployee = null;
         }
 
         /// <summary>
@@ -117,5 +120,214 @@ namespace ManteHos.Services
         // Resto de metodos necesarios para el servicio
         //
 
+        public void Login(string id, string password)
+        {
+            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(password))
+                throw new ServiceException("Id y password son requerits.");
+
+            Employee employee = dal.GetById<Employee>(id);
+
+            if (employee == null)
+            {
+                throw new ServiceException("User Id no trobat.");
+            }
+
+            if (employee.Password != password)
+            {
+                throw new ServiceException("Password incorrecta.");
+            }
+
+            this.loggedEmployee = employee;
+
+        }
+
+        public void Logout()
+        {
+            this.loggedEmployee = null;
+        }
+
+        public Employee GetLoggedEmployee()
+        {
+            return this.loggedEmployee;
+        }
+
+
+        public void reportIncident(Incident incident)
+        {
+            if (loggedEmployee == null)
+            {
+                throw new ServiceException("Es necessari estar loggeat per a reportar un incident");
+            }
+            if (string.IsNullOrWhiteSpace(incident.Description))
+            {
+                throw new ServiceException("Es requereix una descripcio");
+            }
+            if (string.IsNullOrWhiteSpace(incident.Department))
+            {
+                throw new ServiceException("Es requereix indicar el departament");
+            }
+
+            dal.Insert<Incident>(incident);
+            dal.Commit();
+        }
+
+        public IEnumerable<Incident> getPendingIncidents()
+        {
+            if(loggedEmployee == null || !(loggedEmployee is Head))
+            {
+                throw new ServiceException("Sols Head pot accedir");
+            }
+            return dal.GetWhere<Incident>(x => x.Status == Status.Created);
+        }
+        
+
+        public void AcceptIncident(int incidentId, int areaId, Priority priority)
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Head)) 
+            {
+                throw new ServiceException("Sols Head pot accedir");
+            }
+            Incident incident = dal.GetById<Incident>(incidentId);
+            if (incident == null) throw new ServiceException("No es troba incident");
+
+            if(incident.Status != Status.Created)
+            {
+                throw new ServiceException("Sols es pot acceptar un incident amb el estat 'created'. ");
+            }
+
+            Area area = dal.GetById<Area>(areaId);
+            if (area == null) throw new ServiceException("No es troba area");
+
+            incident.Area = area;
+            incident.Priority = priority;
+            incident.Status = Status.Accepted;
+
+            dal.Commit();
+        }
+
+        public void RejectIncident(int incidentId, string rao)
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Head))
+            {
+                throw new ServiceException("Sols Head pot accedir");
+            }
+
+            if (string.IsNullOrEmpty(rao))
+            {
+                throw new ServiceException("Es requereix una rao");
+            }
+
+            Incident incident = dal.GetById<Incident>(incidentId);
+            incident.RejectionReason = rao;
+            incident.Status = Status.Rejected;
+
+            dal.Commit();
+        }
+
+        public IEnumerable<Incident> GetIncidentsMaster()
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Master))
+            {
+                throw new ServiceException("Sols Master pot accedir");
+            }
+            Master actualMaster = dal.GetById<Master>(loggedEmployee.Id);
+
+            if(actualMaster.Area == null)
+            {
+                throw new ServiceException("No hi ha area asignada per al Master actual.");
+            }
+
+            return dal.GetWhere<Incident>(x => x.Area.Id == actualMaster.Area.Id &&
+                                              (x.Status == Status.Accepted || x.Status == Status.InProgress));
+        }
+
+        public IEnumerable<Operator> GetAllOperators()
+        {
+            return dal.GetAll<Operator>();
+        }
+
+        public void OperatorToIncident(int incidentId, string operatorId)
+        {
+            if(loggedEmployee == null || !(loggedEmployee is Master))
+            {
+                throw new ServiceException("Sols Master pot accedir");
+            }
+
+            Incident incident = dal.GetById<Incident>(incidentId);
+            Operator op = dal.GetById<Operator>(operatorId);
+
+            Master actualMaster = (Master)loggedEmployee;
+
+            if(incident.Area == null || incident.Area.Id != actualMaster.Area.Id)
+            {
+                throw new ServiceException("Sols pots accedir a Incidents de la teua mateixa Area");
+            }
+
+            if (incident.WorkOrder == null)
+            {
+                WorkOrder nWorkOrder = new WorkOrder(); //
+                incident.WorkOrder = nWorkOrder;
+                incident.Status = Status.InProgress;
+
+            }
+
+            if (!incident.WorkOrder.Operators.Contains(op))
+            {
+                incident.WorkOrder.Operators.Add(op);
+            }
+            else
+            {
+                throw new ServiceException("El operator ya esta te asignat un WorkOrder.");
+            }
+
+            dal.Commit();
+
+        }
+
+        
+        public IEnumerable<WorkOrder> GetWorkOrders()
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Operator))
+            {
+                throw new ServiceException("Sols Operator pot accedir.");
+            }
+            string operatorId = loggedEmployee.Id;
+
+            return dal.GetWhere<WorkOrder>(wo => wo.EndDate == null && wo.Operators.Any(op => op.Id == operatorId));
+        }
+        
+        public void CloseWorkOrder(int workOrderId, string repairReport)
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Operator))
+            {
+                throw new ServiceException("Sols Operator pot accedir.");
+            }
+            string operatorId = loggedEmployee.Id;
+
+            WorkOrder wo = dal.GetById<WorkOrder>(workOrderId);
+            if (wo == null) throw new ServiceException("No s'ha trobat workOrder");
+
+            if (!wo.Operators.Any(op => op.Id == operatorId))
+            {
+                throw new ServiceException("El Operator no esta asignat a ixe workOrder");
+            }
+
+            if(wo.UsedParts.Any(up=> up.Needed == true))
+            {
+                throw new ServiceException("No es pot tancar el workOrder. N'hi han pendents parts Needed.");
+            }
+
+            wo.RepairReport = repairReport;
+            wo.EndDate = DateTime.Now;
+
+            if(wo.Incident != null)
+            {
+                wo.Incident.Status = Status.Completed;
+            }
+
+            dal.Commit();
+
+        }
+        
     }
 }
