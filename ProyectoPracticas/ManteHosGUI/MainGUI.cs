@@ -41,5 +41,18 @@ namespace ManteHosGUI
         {
             Application.Exit();
         }
+
+        private void reportarIncidentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (service.GetLoggedEmployee() == null)
+            {
+                MessageBox.Show("Debes iniciar sesión primero.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            
+            ReportIncidentForm form = new ReportIncidentForm(service);
+            form.ShowDialog();
+        }
     }
 }
