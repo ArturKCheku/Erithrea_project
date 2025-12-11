@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssingWorkOrderFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssingWorkOrderFrom.Designer.cs">
+      <DependentUpon>AssingWorkOrderFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="ReviewIncidentForm.Designer.cs">
       <DependentUpon>ReviewIncidentForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AssingWorkOrderFrom.resx">
+      <DependentUpon>AssingWorkOrderFrom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

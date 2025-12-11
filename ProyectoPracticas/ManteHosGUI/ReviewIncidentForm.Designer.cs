@@ -50,12 +50,12 @@
             this.dgvIncidents.AllowUserToAddRows = false;
             this.dgvIncidents.AllowUserToDeleteRows = false;
             this.dgvIncidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIncidents.Location = new System.Drawing.Point(12, 12);
+            this.dgvIncidents.Location = new System.Drawing.Point(8, 48);
             this.dgvIncidents.MultiSelect = false;
             this.dgvIncidents.Name = "dgvIncidents";
             this.dgvIncidents.ReadOnly = true;
             this.dgvIncidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIncidents.Size = new System.Drawing.Size(368, 436);
+            this.dgvIncidents.Size = new System.Drawing.Size(527, 255);
             this.dgvIncidents.TabIndex = 0;
             // 
             // grpAcceptData
@@ -64,7 +64,7 @@
             this.grpAcceptData.Controls.Add(this.label2);
             this.grpAcceptData.Controls.Add(this.cbArea);
             this.grpAcceptData.Controls.Add(this.label1);
-            this.grpAcceptData.Location = new System.Drawing.Point(396, 188);
+            this.grpAcceptData.Location = new System.Drawing.Point(12, 397);
             this.grpAcceptData.Name = "grpAcceptData";
             this.grpAcceptData.Size = new System.Drawing.Size(240, 116);
             this.grpAcceptData.TabIndex = 1;
@@ -110,7 +110,7 @@
             // rdbAccept
             // 
             this.rdbAccept.AutoSize = true;
-            this.rdbAccept.Location = new System.Drawing.Point(460, 123);
+            this.rdbAccept.Location = new System.Drawing.Point(78, 332);
             this.rdbAccept.Name = "rdbAccept";
             this.rdbAccept.Size = new System.Drawing.Size(103, 17);
             this.rdbAccept.TabIndex = 5;
@@ -121,7 +121,7 @@
             // rbtReject
             // 
             this.rbtReject.AutoSize = true;
-            this.rbtReject.Location = new System.Drawing.Point(743, 123);
+            this.rbtReject.Location = new System.Drawing.Point(359, 332);
             this.rbtReject.Name = "rbtReject";
             this.rbtReject.Size = new System.Drawing.Size(106, 17);
             this.rbtReject.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             this.grpRejectData.Controls.Add(this.txtRejectReason);
             this.grpRejectData.Controls.Add(this.label4);
-            this.grpRejectData.Location = new System.Drawing.Point(661, 188);
+            this.grpRejectData.Location = new System.Drawing.Point(277, 397);
             this.grpRejectData.Name = "grpRejectData";
             this.grpRejectData.Size = new System.Drawing.Size(262, 116);
             this.grpRejectData.TabIndex = 7;
@@ -142,7 +142,7 @@
             // 
             // txtRejectReason
             // 
-            this.txtRejectReason.Location = new System.Drawing.Point(82, 25);
+            this.txtRejectReason.Location = new System.Drawing.Point(68, 30);
             this.txtRejectReason.Multiline = true;
             this.txtRejectReason.Name = "txtRejectReason";
             this.txtRejectReason.Size = new System.Drawing.Size(142, 68);
@@ -159,7 +159,7 @@
             // 
             // btnProcess
             // 
-            this.btnProcess.Location = new System.Drawing.Point(577, 362);
+            this.btnProcess.Location = new System.Drawing.Point(193, 543);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(137, 23);
             this.btnProcess.TabIndex = 8;
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 460);
+            this.ClientSize = new System.Drawing.Size(547, 613);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.rbtReject);
             this.Controls.Add(this.grpRejectData);
