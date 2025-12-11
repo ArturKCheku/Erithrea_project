@@ -30,16 +30,16 @@
         {
             this.dgvIncidents = new System.Windows.Forms.DataGridView();
             this.grpAcceptData = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbArea = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbPriority = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbArea = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.rdbAccept = new System.Windows.Forms.RadioButton();
             this.rbtReject = new System.Windows.Forms.RadioButton();
             this.grpRejectData = new System.Windows.Forms.GroupBox();
+            this.txtRejectReason = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnProcess = new System.Windows.Forms.Button();
-            this.txtRejectReason = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncidents)).BeginInit();
             this.grpAcceptData.SuspendLayout();
             this.grpRejectData.SuspendLayout();
@@ -71,22 +71,14 @@
             this.grpAcceptData.TabStop = false;
             this.grpAcceptData.Text = "Aceptar";
             // 
-            // label1
+            // cbPriority
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Area";
-            // 
-            // cbArea
-            // 
-            this.cbArea.FormattingEnabled = true;
-            this.cbArea.Location = new System.Drawing.Point(66, 25);
-            this.cbArea.Name = "cbArea";
-            this.cbArea.Size = new System.Drawing.Size(121, 21);
-            this.cbArea.TabIndex = 1;
+            this.cbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPriority.FormattingEnabled = true;
+            this.cbPriority.Location = new System.Drawing.Point(66, 60);
+            this.cbPriority.Name = "cbPriority";
+            this.cbPriority.Size = new System.Drawing.Size(121, 21);
+            this.cbPriority.TabIndex = 3;
             // 
             // label2
             // 
@@ -97,35 +89,45 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Prioritat";
             // 
-            // cbPriority
+            // cbArea
             // 
-            this.cbPriority.FormattingEnabled = true;
-            this.cbPriority.Location = new System.Drawing.Point(66, 60);
-            this.cbPriority.Name = "cbPriority";
-            this.cbPriority.Size = new System.Drawing.Size(121, 21);
-            this.cbPriority.TabIndex = 3;
+            this.cbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbArea.FormattingEnabled = true;
+            this.cbArea.Location = new System.Drawing.Point(66, 25);
+            this.cbArea.Name = "cbArea";
+            this.cbArea.Size = new System.Drawing.Size(121, 21);
+            this.cbArea.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Area";
             // 
             // rdbAccept
             // 
             this.rdbAccept.AutoSize = true;
-            this.rdbAccept.Checked = true;
             this.rdbAccept.Location = new System.Drawing.Point(460, 123);
             this.rdbAccept.Name = "rdbAccept";
             this.rdbAccept.Size = new System.Drawing.Size(103, 17);
             this.rdbAccept.TabIndex = 5;
-            this.rdbAccept.TabStop = true;
             this.rdbAccept.Text = "Aceptar Incident";
             this.rdbAccept.UseVisualStyleBackColor = true;
+            this.rdbAccept.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // rbtReject
             // 
             this.rbtReject.AutoSize = true;
-            this.rbtReject.Location = new System.Drawing.Point(734, 123);
+            this.rbtReject.Location = new System.Drawing.Point(743, 123);
             this.rbtReject.Name = "rbtReject";
             this.rbtReject.Size = new System.Drawing.Size(106, 17);
             this.rbtReject.TabIndex = 6;
             this.rbtReject.Text = "Rebutjar Incident";
             this.rbtReject.UseVisualStyleBackColor = true;
+            this.rbtReject.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // grpRejectData
             // 
@@ -137,6 +139,14 @@
             this.grpRejectData.TabIndex = 7;
             this.grpRejectData.TabStop = false;
             this.grpRejectData.Text = "Rebutjar";
+            // 
+            // txtRejectReason
+            // 
+            this.txtRejectReason.Location = new System.Drawing.Point(82, 25);
+            this.txtRejectReason.Multiline = true;
+            this.txtRejectReason.Name = "txtRejectReason";
+            this.txtRejectReason.Size = new System.Drawing.Size(142, 68);
+            this.txtRejectReason.TabIndex = 5;
             // 
             // label4
             // 
@@ -155,14 +165,7 @@
             this.btnProcess.TabIndex = 8;
             this.btnProcess.Text = "Preocessar Incidencia";
             this.btnProcess.UseVisualStyleBackColor = true;
-            // 
-            // txtRejectReason
-            // 
-            this.txtRejectReason.Location = new System.Drawing.Point(82, 25);
-            this.txtRejectReason.Multiline = true;
-            this.txtRejectReason.Name = "txtRejectReason";
-            this.txtRejectReason.Size = new System.Drawing.Size(142, 68);
-            this.txtRejectReason.TabIndex = 5;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // ReviewIncidentForm
             // 
@@ -177,6 +180,7 @@
             this.Controls.Add(this.dgvIncidents);
             this.Name = "ReviewIncidentForm";
             this.Text = "ReviewIncidentForm";
+            this.Load += new System.EventHandler(this.ReviewIncidentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncidents)).EndInit();
             this.grpAcceptData.ResumeLayout(false);
             this.grpAcceptData.PerformLayout();

@@ -46,13 +46,31 @@ namespace ManteHosGUI
         {
             if (service.GetLoggedEmployee() == null)
             {
-                MessageBox.Show("Debes iniciar sesión primero.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Cal iniciar sesió .", "Atenció", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             
             ReportIncidentForm form = new ReportIncidentForm(service);
             form.ShowDialog();
+        }
+
+        private void revisarIncidenciesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (service.GetLoggedEmployee() == null)
+            {
+                MessageBox.Show("Cal iniciar sesió .", "Atenció", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(!(service.GetLoggedEmployee() is Head))
+            {
+                MessageBox.Show("Acces denegat. No tens suficients permisos", "Seguretat", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+
+            ReviewIncidentForm form = new ReviewIncidentForm(service);
+            form.ShowDialog();
+
         }
     }
 }
