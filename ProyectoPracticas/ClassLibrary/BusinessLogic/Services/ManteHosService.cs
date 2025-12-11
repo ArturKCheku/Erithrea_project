@@ -167,6 +167,13 @@ namespace ManteHos.Services
                 throw new ServiceException("Es requereix indicar el departament");
             }
 
+            incident.Reporter = loggedEmployee;
+            incident.ReportDate = DateTime.Now;
+            incident.Status = Status.Created;
+            incident.CostOfUsedParts= 0;
+
+
+
             dal.Insert<Incident>(incident);
             dal.Commit();
         }
@@ -180,6 +187,11 @@ namespace ManteHos.Services
             return dal.GetWhere<Incident>(x => x.Status == Status.Created);
         }
         
+
+        public IEnumerable<Area> GetAllAreas()
+        {
+            return dal.GetAll<Area>();
+        }
 
         public void AcceptIncident(int incidentId, int areaId, Priority priority)
         {

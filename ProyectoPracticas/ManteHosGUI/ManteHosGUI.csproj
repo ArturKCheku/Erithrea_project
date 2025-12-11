@@ -78,6 +78,12 @@
     <Compile Include="ReportIncidentForm.Designer.cs">
       <DependentUpon>ReportIncidentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReviewIncidentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewIncidentForm.Designer.cs">
+      <DependentUpon>ReviewIncidentForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="ReportIncidentForm.resx">
       <DependentUpon>ReportIncidentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReviewIncidentForm.resx">
+      <DependentUpon>ReviewIncidentForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -32,6 +32,7 @@ namespace ManteHos.Services
                                                //una excepció, si el Employee es null, tira excepció
 
         IEnumerable<Incident> getPendingIncidents();
+        IEnumerable<Area> GetAllAreas();
         
         void AcceptIncident(int incidentId, int areaId, Priority priority);
         void RejectIncident(int incidentId, string rao);

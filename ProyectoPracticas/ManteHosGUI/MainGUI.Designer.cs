@@ -47,27 +47,28 @@
             this.empleatsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1311, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(983, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -76,25 +77,24 @@
             this.empleatsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportarIncidentToolStripMenuItem});
             this.empleatsToolStripMenuItem.Name = "empleatsToolStripMenuItem";
-            this.empleatsToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.empleatsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.empleatsToolStripMenuItem.Text = "Empleats";
             // 
             // reportarIncidentToolStripMenuItem
             // 
             this.reportarIncidentToolStripMenuItem.Name = "reportarIncidentToolStripMenuItem";
-            this.reportarIncidentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reportarIncidentToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.reportarIncidentToolStripMenuItem.Text = "Reportar Incident";
             this.reportarIncidentToolStripMenuItem.Click += new System.EventHandler(this.reportarIncidentToolStripMenuItem_Click);
             // 
             // MainGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 746);
+            this.ClientSize = new System.Drawing.Size(983, 606);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainGUI";
             this.Text = "ManteHos App";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
