@@ -36,6 +36,8 @@
             this.reportarIncidentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jefesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revisarIncidenciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarOrdreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,11 +49,12 @@
             this.loginToolStripMenuItem,
             this.salirToolStripMenuItem,
             this.empleatsToolStripMenuItem,
-            this.jefesToolStripMenuItem});
+            this.jefesToolStripMenuItem,
+            this.maestreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(983, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(904, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -101,15 +104,31 @@
             // revisarIncidenciesToolStripMenuItem
             // 
             this.revisarIncidenciesToolStripMenuItem.Name = "revisarIncidenciesToolStripMenuItem";
-            this.revisarIncidenciesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.revisarIncidenciesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.revisarIncidenciesToolStripMenuItem.Text = "Revisar Incidencies";
             this.revisarIncidenciesToolStripMenuItem.Click += new System.EventHandler(this.revisarIncidenciesToolStripMenuItem_Click);
+            // 
+            // maestreToolStripMenuItem
+            // 
+            this.maestreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asignarOrdreToolStripMenuItem});
+            this.maestreToolStripMenuItem.Name = "maestreToolStripMenuItem";
+            this.maestreToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.maestreToolStripMenuItem.Text = "Maestre";
+            // 
+            // asignarOrdreToolStripMenuItem
+            // 
+            this.asignarOrdreToolStripMenuItem.Name = "asignarOrdreToolStripMenuItem";
+            this.asignarOrdreToolStripMenuItem.RightToLeftAutoMirrorImage = true;
+            this.asignarOrdreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarOrdreToolStripMenuItem.Text = "Asignar Ordres";
+            this.asignarOrdreToolStripMenuItem.Click += new System.EventHandler(this.asignarOrdreToolStripMenuItem_Click);
             // 
             // MainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 606);
+            this.ClientSize = new System.Drawing.Size(904, 424);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -133,6 +152,8 @@
         private System.Windows.Forms.ToolStripMenuItem reportarIncidentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jefesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem revisarIncidenciesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maestreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarOrdreToolStripMenuItem;
     }
 }
 

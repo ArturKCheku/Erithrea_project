@@ -24,7 +24,7 @@ namespace ManteHosGUI
 
         private void CargarOperators()
         {
-            cbOperators.DataSource = service.GetAllOperators();
+            cbOperators.DataSource = service.GetAllOperators().ToList();
             cbOperators.DisplayMember = "FullName";
             cbOperators.ValueMember = "Id";
         }
@@ -40,7 +40,7 @@ namespace ManteHosGUI
                 Priority = i.Priority,
                 Status = i.Status,
 
-                asignedOperators = (i.WorkOrder != null && i.WorkOrder.Operators.Count > 0)
+                Operaris = (i.WorkOrder != null && i.WorkOrder.Operators.Count > 0)
                     ? string.Join(",", i.WorkOrder.Operators.Select(o => o.FullName))
                     : "Sense Asignar"
             }).ToList();
@@ -54,5 +54,59 @@ namespace ManteHosGUI
             CargarOperators();
         }
 
+        private bool selectAlgo()
+        {
+            if (dgvIncidents.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona una incidencia.", "Avis", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if(cbOperators.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un operari del desplegable.", "Avis", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            if(!selectAlgo()) return;
+
+            int incidentId = (int)dgvIncidents.SelectedRows[0].Cells["Id"].Value;
+            string operatorId = cbOperators.SelectedValue.ToString();
+
+            try
+            {
+                service.AssignOperatorToIncident(incidentId, operatorId);
+
+                MessageBox.Show("Operari asignat correctament.", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarIncidents();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            if (!selectAlgo()) return;
+
+            int incidentId = (int)dgvIncidents.SelectedRows[0].Cells["Id"].Value;
+            string operatorId = cbOperators.SelectedValue.ToString();
+
+            try
+            {
+                service.UnassignOperatorToIncident(incidentId, operatorId);
+
+                MessageBox.Show("Operari eliminat de la orden.", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarIncidents();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

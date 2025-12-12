@@ -258,7 +258,7 @@ namespace ManteHos.Services
             return dal.GetAll<Operator>();
         }
 
-        public void OperatorToIncident(int incidentId, string operatorId)
+        public void AssignOperatorToIncident(int incidentId, string operatorId)
         {
             if(loggedEmployee == null || !(loggedEmployee is Master))
             {
@@ -266,7 +266,10 @@ namespace ManteHos.Services
             }
 
             Incident incident = dal.GetById<Incident>(incidentId);
+            if (incident == null) throw new ServiceException("Incident no trobat.");
+
             Operator op = dal.GetById<Operator>(operatorId);
+            if (op == null) throw new ServiceException("Operator no trobat.");
 
             Master actualMaster = (Master)loggedEmployee;
 
@@ -277,7 +280,15 @@ namespace ManteHos.Services
 
             if (incident.WorkOrder == null)
             {
-                WorkOrder nWorkOrder = new WorkOrder(); //
+                WorkOrder nWorkOrder = new WorkOrder()
+                {
+                    StartDate = DateTime.Now,
+                    Incident = incident,
+                    Operators = new List<Operator>(),
+                    UsedParts = new List<UsedPart>(),
+                    RepairReport = ""
+                };
+
                 incident.WorkOrder = nWorkOrder;
                 incident.Status = Status.InProgress;
 
@@ -289,14 +300,52 @@ namespace ManteHos.Services
             }
             else
             {
-                throw new ServiceException("El operator ya esta te asignat un WorkOrder.");
+                throw new ServiceException("El operator ya te asignat aquest WorkOrder.");
             }
 
             dal.Commit();
 
         }
 
-        
+        public void UnassignOperatorToIncident(int incidentId, string operatorId)
+        {
+            if (loggedEmployee == null || !(loggedEmployee is Master))
+            {
+                throw new ServiceException("Sols Master pot accedir");
+            }
+
+            Incident incident = dal.GetById<Incident>(incidentId);
+            if (incident == null) throw new ServiceException("Incident no trobat.");
+
+            Operator op = dal.GetById<Operator>(operatorId);
+            if (op == null) throw new ServiceException("Operator no trobat.");
+
+            Master actualMaster = (Master)loggedEmployee;
+
+            if (incident.Area == null || incident.Area.Id != actualMaster.Area.Id)
+            {
+                throw new ServiceException("Sols pots accedir a Incidents de la teua mateixa Area");
+            }
+
+            if (incident.WorkOrder == null)
+            {
+                throw new ServiceException("No existeix workOrder per a este incident");
+            }
+
+            if (incident.WorkOrder.Operators.Contains(op))
+            {
+                incident.WorkOrder.Operators.Remove(op);
+            }
+            else
+            {
+                throw new ServiceException("El operator no te asignat aquest workOrder.");
+            }
+
+            dal.Commit();
+
+        }
+
+
         public IEnumerable<WorkOrder> GetWorkOrders()
         {
             if (loggedEmployee == null || !(loggedEmployee is Operator))

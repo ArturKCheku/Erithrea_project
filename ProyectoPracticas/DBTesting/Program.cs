@@ -94,6 +94,14 @@ namespace DBTest
             dal.Insert<Operator>(op1);
             dal.Commit();
 
+            Operator op2 = new Operator("Otilio", "o2", "o2", Shift.Afternoon);
+            dal.Insert<Operator>(op2);
+            dal.Commit();
+
+            Operator op3 = new Operator("Rompetechos", "o3", "o3", Shift.Night);
+            dal.Insert<Operator>(op3);
+            dal.Commit();
+
             Employee empleado1 = new Employee("Sacarino", "e2", "e2");
             dal.Insert<Employee>(empleado1);
             dal.Commit();
@@ -115,6 +123,7 @@ namespace DBTest
             Console.WriteLine("\n// CREACIÓN DE INCIDENTES");
             Incident incident1 = new Incident("Urgencias", "Fuga de agua", DateTime.Now, empleado1);
             incident1.Area = area1;
+            incident1.Status = Status.InProgress;
             dal.Insert<Incident>(incident1);
             dal.Commit();
 

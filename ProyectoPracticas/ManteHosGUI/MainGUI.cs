@@ -66,9 +66,28 @@ namespace ManteHosGUI
             if(!(service.GetLoggedEmployee() is Head))
             {
                 MessageBox.Show("Acces denegat. No tens suficients permisos", "Seguretat", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
             }
 
             ReviewIncidentForm form = new ReviewIncidentForm(service);
+            form.ShowDialog();
+
+        }
+
+        private void asignarOrdreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (service.GetLoggedEmployee() == null)
+            {
+                return;
+            }
+
+            if(!(service.GetLoggedEmployee() is Master))
+            {
+                MessageBox.Show("Acceso denegado. Solo para Maestros de Área.", "Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            AssingWorkOrderFrom form = new AssingWorkOrderFrom(service);
             form.ShowDialog();
 
         }

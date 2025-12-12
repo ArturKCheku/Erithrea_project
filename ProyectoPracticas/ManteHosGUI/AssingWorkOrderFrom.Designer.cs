@@ -42,23 +42,22 @@
             this.dgvIncidents.AllowUserToAddRows = false;
             this.dgvIncidents.AllowUserToDeleteRows = false;
             this.dgvIncidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIncidents.Location = new System.Drawing.Point(16, 15);
-            this.dgvIncidents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvIncidents.Location = new System.Drawing.Point(12, 12);
             this.dgvIncidents.MultiSelect = false;
             this.dgvIncidents.Name = "dgvIncidents";
             this.dgvIncidents.ReadOnly = true;
+            this.dgvIncidents.RowHeadersVisible = false;
             this.dgvIncidents.RowHeadersWidth = 51;
             this.dgvIncidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIncidents.Size = new System.Drawing.Size(532, 260);
+            this.dgvIncidents.Size = new System.Drawing.Size(499, 211);
             this.dgvIncidents.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(144, 363);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(168, 320);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Seleccionar:";
             // 
@@ -66,55 +65,52 @@
             // 
             this.cbOperators.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOperators.FormattingEnabled = true;
-            this.cbOperators.Location = new System.Drawing.Point(240, 359);
-            this.cbOperators.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbOperators.Location = new System.Drawing.Point(240, 317);
             this.cbOperators.Name = "cbOperators";
-            this.cbOperators.Size = new System.Drawing.Size(160, 24);
+            this.cbOperators.Size = new System.Drawing.Size(121, 21);
             this.cbOperators.TabIndex = 2;
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(103, 455);
-            this.btnQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuit.Location = new System.Drawing.Point(137, 395);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnQuit.Size = new System.Drawing.Size(151, 28);
+            this.btnQuit.Size = new System.Drawing.Size(113, 23);
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Retirar Operari";
             this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // btnAssign
             // 
-            this.btnAssign.Location = new System.Drawing.Point(300, 455);
-            this.btnAssign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAssign.Location = new System.Drawing.Point(285, 395);
             this.btnAssign.Name = "btnAssign";
-            this.btnAssign.Size = new System.Drawing.Size(151, 28);
+            this.btnAssign.Size = new System.Drawing.Size(113, 23);
             this.btnAssign.TabIndex = 4;
             this.btnAssign.Text = "Asignar Operari";
             this.btnAssign.UseVisualStyleBackColor = true;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(151, 312);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(173, 279);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 16);
+            this.label2.Size = new System.Drawing.Size(188, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Asignar operari al incident seleccionat:";
             // 
             // AssingWorkOrderFrom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 547);
+            this.ClientSize = new System.Drawing.Size(531, 519);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAssign);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.cbOperators);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvIncidents);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AssingWorkOrderFrom";
             this.Text = "AssingWorkOrderFrom";
             this.Load += new System.EventHandler(this.AssingWorkOrderFrom_Load);
