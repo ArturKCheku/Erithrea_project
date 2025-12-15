@@ -64,6 +64,12 @@
     <Compile Include="AssingWorkOrderFrom.Designer.cs">
       <DependentUpon>AssingWorkOrderFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="CloseWorkOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseWorkOrderForm.Designer.cs">
+      <DependentUpon>CloseWorkOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="AssingWorkOrderFrom.resx">
       <DependentUpon>AssingWorkOrderFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CloseWorkOrderForm.resx">
+      <DependentUpon>CloseWorkOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
