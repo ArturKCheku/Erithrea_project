@@ -46,6 +46,8 @@ namespace ManteHosGUI
             }
 
             actualizarDgvWO();
+
+            dgvWorkOrders_SelectionChanged(null, null);
             
         }
 
@@ -91,5 +93,35 @@ namespace ManteHosGUI
 
         }
 
+        private void btnCloseOrder_Click(object sender, EventArgs e)
+        {
+            if (dgvWorkOrders.SelectedRows.Count == 0) return;
+
+            if (string.IsNullOrWhiteSpace(txtRepairReport.Text))
+            {
+                MessageBox.Show("Cal escriure un report de reparació.", "Avís", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int workOrderId = (int)dgvWorkOrders.SelectedRows[0].Cells["Id"].Value;
+
+            try
+            {
+                service.CloseWorkOrder(workOrderId, txtRepairReport.Text);
+
+                MessageBox.Show("Ordre tancada y completada amb éxit.", "Resolt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CargarOrdresPendents();
+            }
+            catch (ServiceException ex)
+            {
+                MessageBox.Show(ex.Message, "No es pot tancar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+        }
     }
 }

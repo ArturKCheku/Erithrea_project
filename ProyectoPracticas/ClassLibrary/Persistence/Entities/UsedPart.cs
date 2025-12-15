@@ -11,7 +11,7 @@ namespace ManteHos.Entities
 {
     public partial class UsedPart
     {
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None), Key()]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
         public int Id { get; set; }
 
         

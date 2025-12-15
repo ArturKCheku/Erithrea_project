@@ -127,6 +127,12 @@ namespace DBTest
             dal.Insert<Incident>(incident1);
             dal.Commit();
 
+            Incident incident2 = new Incident("Quirófano", "Fuga", DateTime.Now, op3);
+            incident1.Area = area2;
+            incident1.Status = Status.InProgress;
+            dal.Insert<Incident>(incident2);
+            dal.Commit();
+
             /*Console.WriteLine("\n// CREACIÓN DE ÓRDENES DE TRABAJO");
             WorkOrder workOrder1 = new WorkOrder(DateTime.Now, incident1);
             workOrder1.AddOperator(op1);
@@ -147,6 +153,8 @@ namespace DBTest
             }; dal.Insert<WorkOrder>(w1);
             dal.Commit();
 
+           
+
             UsedPart up1 = new UsedPart
             {
                 Part = part1,
@@ -159,6 +167,36 @@ namespace DBTest
             w1.UsedParts.Add(up1);
             part1.UsedParts.Add(up1);
             part1.CurrentQuantity -= up1.Quantity;
+            dal.Commit();
+
+
+            WorkOrder w2 = new WorkOrder
+            {
+                StartDate = DateTime.Now,
+                EndDate = null,
+                RepairReport = "some2",
+                Incident = incident2,
+                Operators = new List<Operator> { op1 }
+
+
+
+            }; dal.Insert<WorkOrder>(w2);
+            dal.Commit();
+
+            UsedPart up2 = new UsedPart
+            {
+                Part = part2,
+                Quantity = 3,
+                Needed = false
+            };
+           
+            
+            
+            w2.UsedParts.Add(up2);
+            part2.UsedParts.Add(up2);
+            //part2.CurrentQuantity -= up2.Quantity;
+
+            dal.Insert<UsedPart>(up2);
             dal.Commit();
 
 

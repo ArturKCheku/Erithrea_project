@@ -91,5 +91,19 @@ namespace ManteHosGUI
             form.ShowDialog();
 
         }
+
+        private void tancarOrdresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(service.GetLoggedEmployee() == null) { return; }
+
+            if(!(service.GetLoggedEmployee() is Operator))
+            {
+                MessageBox.Show("Acces denegat. Solos per a Operaris.", "Seguritat", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            CloseWorkOrderForm form = new CloseWorkOrderForm(service);
+            form.ShowDialog();
+        }
     }
 }

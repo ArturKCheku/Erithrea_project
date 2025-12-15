@@ -44,19 +44,19 @@
             this.dgvWorkOrders.AllowUserToAddRows = false;
             this.dgvWorkOrders.AllowUserToDeleteRows = false;
             this.dgvWorkOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWorkOrders.Location = new System.Drawing.Point(289, 12);
+            this.dgvWorkOrders.Location = new System.Drawing.Point(12, 12);
             this.dgvWorkOrders.MultiSelect = false;
             this.dgvWorkOrders.Name = "dgvWorkOrders";
             this.dgvWorkOrders.ReadOnly = true;
             this.dgvWorkOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWorkOrders.Size = new System.Drawing.Size(240, 150);
+            this.dgvWorkOrders.Size = new System.Drawing.Size(410, 150);
             this.dgvWorkOrders.TabIndex = 0;
             this.dgvWorkOrders.SelectionChanged += new System.EventHandler(this.dgvWorkOrders_SelectionChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(261, 208);
+            this.label1.Location = new System.Drawing.Point(9, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 13);
             this.label1.TabIndex = 1;
@@ -67,18 +67,18 @@
             this.dgvUsedParts.AllowUserToAddRows = false;
             this.dgvUsedParts.AllowUserToDeleteRows = false;
             this.dgvUsedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsedParts.Location = new System.Drawing.Point(290, 238);
+            this.dgvUsedParts.Location = new System.Drawing.Point(12, 223);
             this.dgvUsedParts.MultiSelect = false;
             this.dgvUsedParts.Name = "dgvUsedParts";
             this.dgvUsedParts.ReadOnly = true;
             this.dgvUsedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsedParts.Size = new System.Drawing.Size(240, 150);
+            this.dgvUsedParts.Size = new System.Drawing.Size(410, 150);
             this.dgvUsedParts.TabIndex = 2;
             // 
             // lblCost
             // 
             this.lblCost.AutoSize = true;
-            this.lblCost.Location = new System.Drawing.Point(247, 412);
+            this.lblCost.Location = new System.Drawing.Point(84, 430);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(88, 13);
             this.lblCost.TabIndex = 3;
@@ -87,7 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(247, 446);
+            this.label3.Location = new System.Drawing.Point(84, 464);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 13);
             this.label3.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             // txtRepairReport
             // 
-            this.txtRepairReport.Location = new System.Drawing.Point(378, 394);
+            this.txtRepairReport.Location = new System.Drawing.Point(215, 412);
             this.txtRepairReport.Multiline = true;
             this.txtRepairReport.Name = "txtRepairReport";
             this.txtRepairReport.Size = new System.Drawing.Size(179, 85);
@@ -103,18 +103,19 @@
             // 
             // btnCloseOrder
             // 
-            this.btnCloseOrder.Location = new System.Drawing.Point(317, 522);
+            this.btnCloseOrder.Location = new System.Drawing.Point(154, 540);
             this.btnCloseOrder.Name = "btnCloseOrder";
             this.btnCloseOrder.Size = new System.Drawing.Size(163, 23);
             this.btnCloseOrder.TabIndex = 6;
             this.btnCloseOrder.Text = "Tancar Ordre";
             this.btnCloseOrder.UseVisualStyleBackColor = true;
+            this.btnCloseOrder.Click += new System.EventHandler(this.btnCloseOrder_Click);
             // 
             // CloseWorkOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 626);
+            this.ClientSize = new System.Drawing.Size(457, 626);
             this.Controls.Add(this.btnCloseOrder);
             this.Controls.Add(this.txtRepairReport);
             this.Controls.Add(this.label3);

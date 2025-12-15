@@ -38,6 +38,8 @@
             this.revisarIncidenciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarOrdreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operarisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tancarOrdresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,8 @@
             this.salirToolStripMenuItem,
             this.empleatsToolStripMenuItem,
             this.jefesToolStripMenuItem,
-            this.maestreToolStripMenuItem});
+            this.maestreToolStripMenuItem,
+            this.operarisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -120,9 +123,24 @@
             // 
             this.asignarOrdreToolStripMenuItem.Name = "asignarOrdreToolStripMenuItem";
             this.asignarOrdreToolStripMenuItem.RightToLeftAutoMirrorImage = true;
-            this.asignarOrdreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarOrdreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.asignarOrdreToolStripMenuItem.Text = "Asignar Ordres";
             this.asignarOrdreToolStripMenuItem.Click += new System.EventHandler(this.asignarOrdreToolStripMenuItem_Click);
+            // 
+            // operarisToolStripMenuItem
+            // 
+            this.operarisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tancarOrdresToolStripMenuItem});
+            this.operarisToolStripMenuItem.Name = "operarisToolStripMenuItem";
+            this.operarisToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.operarisToolStripMenuItem.Text = "Operaris";
+            // 
+            // tancarOrdresToolStripMenuItem
+            // 
+            this.tancarOrdresToolStripMenuItem.Name = "tancarOrdresToolStripMenuItem";
+            this.tancarOrdresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tancarOrdresToolStripMenuItem.Text = "Tancar Ordres";
+            this.tancarOrdresToolStripMenuItem.Click += new System.EventHandler(this.tancarOrdresToolStripMenuItem_Click);
             // 
             // MainGUI
             // 
@@ -154,6 +172,8 @@
         private System.Windows.Forms.ToolStripMenuItem revisarIncidenciesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarOrdreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operarisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tancarOrdresToolStripMenuItem;
     }
 }
 
