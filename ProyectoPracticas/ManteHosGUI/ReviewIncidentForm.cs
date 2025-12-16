@@ -83,6 +83,7 @@ namespace ManteHosGUI
             if(dgvIncidents.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Per favor selecciona una llista", "Avis", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             int incidentId = (int)dgvIncidents.SelectedRows[0].Cells["Id"].Value;
