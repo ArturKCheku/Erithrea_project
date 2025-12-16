@@ -49,8 +49,8 @@ namespace ManteHosGUI
 
         private void ExitB_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            //this.DialogResult = DialogResult.Cancel;
+            Application.Exit();
         }
     }
 }

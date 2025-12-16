@@ -15,34 +15,36 @@ namespace ManteHosGUI
     public partial class MainGUI : Form
     {
         private IManteHosService service;
+
+        public bool LogoutRequested { get; private set; } = false;
         public MainGUI(IManteHosService service)
         {
             InitializeComponent();
             this.service = service;
         }
 
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MainGUI_Load(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm(service);
-
-            DialogResult result = loginForm.ShowDialog();
-
-            if(result == DialogResult.OK)
+            Employee emp = service.GetLoggedEmployee();
+            if(emp != null)
             {
-                Employee usuario = service.GetLoggedEmployee();
+                lblWelcome.Text = "Benvingut, " + emp.FullName;
+                /*La vaina del string del rol*/
+                
+                
+                string role = emp.GetType().Name;
+                int index = role.IndexOf("_");
+                if (index >= 0)
+                    role = role.Substring(0, index);
 
-                this.Text = "ManteHos App -Usuario: " + usuario.FullName;
+                lblRol.Text = "Rol actual: " + role;
 
-                MessageBox.Show("Bienvenide " + usuario.FullName, "Sesión Iniciada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblStatus.Text = $"Conectat com {emp.Id} Data: {DateTime.Now.ToShortDateString()}";
+
             }
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void reportarIncidentToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reportarIncidenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (service.GetLoggedEmployee() == null)
             {
@@ -50,12 +52,12 @@ namespace ManteHosGUI
                 return;
             }
 
-            
+
             ReportIncidentForm form = new ReportIncidentForm(service);
             form.ShowDialog();
         }
 
-        private void revisarIncidenciesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void revisarIncidenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (service.GetLoggedEmployee() == null)
             {
@@ -63,7 +65,7 @@ namespace ManteHosGUI
                 return;
             }
 
-            if(!(service.GetLoggedEmployee() is Head))
+            if (!(service.GetLoggedEmployee() is Head))
             {
                 MessageBox.Show("Acces denegat. No tens suficients permisos", "Seguretat", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
@@ -71,17 +73,16 @@ namespace ManteHosGUI
 
             ReviewIncidentForm form = new ReviewIncidentForm(service);
             form.ShowDialog();
-
         }
 
-        private void asignarOrdreToolStripMenuItem_Click(object sender, EventArgs e)
+        private void asignarWorkOrdresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (service.GetLoggedEmployee() == null)
             {
                 return;
             }
 
-            if(!(service.GetLoggedEmployee() is Master))
+            if (!(service.GetLoggedEmployee() is Master))
             {
                 MessageBox.Show("Acceso denegado. Solo para Maestros de Área.", "Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
@@ -89,14 +90,13 @@ namespace ManteHosGUI
 
             AssingWorkOrderFrom form = new AssingWorkOrderFrom(service);
             form.ShowDialog();
-
         }
 
-        private void tancarOrdresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tancarWorkOrdresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(service.GetLoggedEmployee() == null) { return; }
+            if (service.GetLoggedEmployee() == null) { return; }
 
-            if(!(service.GetLoggedEmployee() is Operator))
+            if (!(service.GetLoggedEmployee() is Operator))
             {
                 MessageBox.Show("Acces denegat. Solos per a Operaris.", "Seguritat", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
@@ -104,6 +104,31 @@ namespace ManteHosGUI
 
             CloseWorkOrderForm form = new CloseWorkOrderForm(service);
             form.ShowDialog();
+        }
+
+
+        private void salirB_Click(object sender, EventArgs e)
+        {
+            this.LogoutRequested = false;
+            this.Close();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Cerrar sesión y volver al login?", "Logout",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                service.Logout();
+                this.LogoutRequested = true;
+                this.Close();
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LogoutRequested = false;
+            this.Close();
+            Application.Exit();
         }
     }
 }

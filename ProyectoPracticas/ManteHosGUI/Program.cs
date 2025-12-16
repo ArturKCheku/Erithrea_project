@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ManteHos.Services;
 using ManteHos.Persistence;
-using ManteHosGUI;
+using ManteHos.Entities;
 
 namespace ManteHosGUI
 {
@@ -22,6 +22,29 @@ namespace ManteHosGUI
 
             IDAL dal = new EntityFrameworkDAL(new ManteHosDbContext());
             IManteHosService service = new ManteHosService(dal);
+
+            bool userExit = false;
+
+            while (!userExit)
+            {
+                LoginForm login = new LoginForm(service);
+
+                if(login.ShowDialog() == DialogResult.OK)
+                {
+                    MainGUI main = new MainGUI(service);
+                    main.ShowDialog();
+
+                    if(main.LogoutRequested == false)
+                    {
+                        userExit = true;
+                    }
+                    
+                }
+                else
+                {
+                    userExit = true;
+                }
+            }
 
             Application.Run(new MainGUI(service));
         }

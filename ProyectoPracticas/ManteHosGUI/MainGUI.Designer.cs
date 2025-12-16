@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportarIncidentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jefesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.revisarIncidenciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarOrdreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operarisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tancarOrdresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportarIncidenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.revisarIncidenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarWorkOrdresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tancarWorkOrdresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,112 +45,104 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.loginToolStripMenuItem,
-            this.salirToolStripMenuItem,
-            this.empleatsToolStripMenuItem,
-            this.jefesToolStripMenuItem,
-            this.maestreToolStripMenuItem,
-            this.operarisToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.logoutToolStripMenuItem,
+            this.reportarIncidenciaToolStripMenuItem1,
+            this.revisarIncidenciaToolStripMenuItem1,
+            this.asignarWorkOrdresToolStripMenuItem1,
+            this.tancarWorkOrdresToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(904, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1205, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // archivoToolStripMenuItem
+            // lblWelcome
             // 
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Location = new System.Drawing.Point(516, 183);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(65, 16);
+            this.lblWelcome.TabIndex = 3;
+            this.lblWelcome.Text = "Welcome";
             // 
-            // loginToolStripMenuItem
+            // lblRol
             // 
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.loginToolStripMenuItem.Text = "Login";
-            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+            this.lblRol.AutoSize = true;
+            this.lblRol.Location = new System.Drawing.Point(516, 220);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(28, 16);
+            this.lblRol.TabIndex = 4;
+            this.lblRol.Text = "Rol";
             // 
-            // salirToolStripMenuItem
+            // lblStatus
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(1027, 9);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(166, 16);
+            this.lblStatus.TabIndex = 5;
+            this.lblStatus.Text = "Estat de la Xarxa: Conectat";
             // 
-            // empleatsToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            this.empleatsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportarIncidentToolStripMenuItem});
-            this.empleatsToolStripMenuItem.Name = "empleatsToolStripMenuItem";
-            this.empleatsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.empleatsToolStripMenuItem.Text = "Empleats";
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // reportarIncidentToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.reportarIncidentToolStripMenuItem.Name = "reportarIncidentToolStripMenuItem";
-            this.reportarIncidentToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.reportarIncidentToolStripMenuItem.Text = "Reportar Incident";
-            this.reportarIncidentToolStripMenuItem.Click += new System.EventHandler(this.reportarIncidentToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // jefesToolStripMenuItem
+            // reportarIncidenciaToolStripMenuItem1
             // 
-            this.jefesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.revisarIncidenciesToolStripMenuItem});
-            this.jefesToolStripMenuItem.Name = "jefesToolStripMenuItem";
-            this.jefesToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.jefesToolStripMenuItem.Text = "Jefes";
+            this.reportarIncidenciaToolStripMenuItem1.Name = "reportarIncidenciaToolStripMenuItem1";
+            this.reportarIncidenciaToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.reportarIncidenciaToolStripMenuItem1.Text = "Reportar Incidencia";
+            this.reportarIncidenciaToolStripMenuItem1.Click += new System.EventHandler(this.reportarIncidenciaToolStripMenuItem_Click);
             // 
-            // revisarIncidenciesToolStripMenuItem
+            // revisarIncidenciaToolStripMenuItem1
             // 
-            this.revisarIncidenciesToolStripMenuItem.Name = "revisarIncidenciesToolStripMenuItem";
-            this.revisarIncidenciesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.revisarIncidenciesToolStripMenuItem.Text = "Revisar Incidencies";
-            this.revisarIncidenciesToolStripMenuItem.Click += new System.EventHandler(this.revisarIncidenciesToolStripMenuItem_Click);
+            this.revisarIncidenciaToolStripMenuItem1.Name = "revisarIncidenciaToolStripMenuItem1";
+            this.revisarIncidenciaToolStripMenuItem1.Size = new System.Drawing.Size(141, 24);
+            this.revisarIncidenciaToolStripMenuItem1.Text = "Revisar Incidencia";
+            this.revisarIncidenciaToolStripMenuItem1.Click += new System.EventHandler(this.revisarIncidenciaToolStripMenuItem_Click);
             // 
-            // maestreToolStripMenuItem
+            // asignarWorkOrdresToolStripMenuItem1
             // 
-            this.maestreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asignarOrdreToolStripMenuItem});
-            this.maestreToolStripMenuItem.Name = "maestreToolStripMenuItem";
-            this.maestreToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.maestreToolStripMenuItem.Text = "Maestre";
+            this.asignarWorkOrdresToolStripMenuItem1.Name = "asignarWorkOrdresToolStripMenuItem1";
+            this.asignarWorkOrdresToolStripMenuItem1.Size = new System.Drawing.Size(155, 24);
+            this.asignarWorkOrdresToolStripMenuItem1.Text = "Asignar WorkOrdres";
+            this.asignarWorkOrdresToolStripMenuItem1.Click += new System.EventHandler(this.asignarWorkOrdresToolStripMenuItem_Click);
             // 
-            // asignarOrdreToolStripMenuItem
+            // tancarWorkOrdresToolStripMenuItem1
             // 
-            this.asignarOrdreToolStripMenuItem.Name = "asignarOrdreToolStripMenuItem";
-            this.asignarOrdreToolStripMenuItem.RightToLeftAutoMirrorImage = true;
-            this.asignarOrdreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.asignarOrdreToolStripMenuItem.Text = "Asignar Ordres";
-            this.asignarOrdreToolStripMenuItem.Click += new System.EventHandler(this.asignarOrdreToolStripMenuItem_Click);
-            // 
-            // operarisToolStripMenuItem
-            // 
-            this.operarisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tancarOrdresToolStripMenuItem});
-            this.operarisToolStripMenuItem.Name = "operarisToolStripMenuItem";
-            this.operarisToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.operarisToolStripMenuItem.Text = "Operaris";
-            // 
-            // tancarOrdresToolStripMenuItem
-            // 
-            this.tancarOrdresToolStripMenuItem.Name = "tancarOrdresToolStripMenuItem";
-            this.tancarOrdresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tancarOrdresToolStripMenuItem.Text = "Tancar Ordres";
-            this.tancarOrdresToolStripMenuItem.Click += new System.EventHandler(this.tancarOrdresToolStripMenuItem_Click);
+            this.tancarWorkOrdresToolStripMenuItem1.Name = "tancarWorkOrdresToolStripMenuItem1";
+            this.tancarWorkOrdresToolStripMenuItem1.Size = new System.Drawing.Size(147, 24);
+            this.tancarWorkOrdresToolStripMenuItem1.Text = "Tancar WorkOrdres";
+            this.tancarWorkOrdresToolStripMenuItem1.Click += new System.EventHandler(this.tancarWorkOrdresToolStripMenuItem_Click);
             // 
             // MainGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 424);
+            this.ClientSize = new System.Drawing.Size(1205, 522);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.lblRol);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainGUI";
             this.Text = "ManteHos App";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainGUI_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -163,17 +153,15 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem empleatsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportarIncidentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jefesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem revisarIncidenciesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem maestreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asignarOrdreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem operarisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tancarOrdresToolStripMenuItem;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportarIncidenciaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem revisarIncidenciaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem asignarWorkOrdresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tancarWorkOrdresToolStripMenuItem1;
     }
 }
 
