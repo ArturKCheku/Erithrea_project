@@ -49,8 +49,12 @@ namespace ManteHosGUI
 
         private void ExitB_Click(object sender, EventArgs e)
         {
-            //this.DialogResult = DialogResult.Cancel;
-            Application.Exit();
+            if (MessageBox.Show("Vols exir de la apliccació?", "Exit",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.Cancel;
+                Application.Exit();
+            }
         }
     }
 }

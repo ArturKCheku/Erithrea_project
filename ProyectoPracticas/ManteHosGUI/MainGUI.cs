@@ -126,9 +126,13 @@ namespace ManteHosGUI
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.LogoutRequested = false;
-            this.Close();
-            Application.Exit();
+            if (MessageBox.Show("Vols exir de la apliccació?", "Exit",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.LogoutRequested = false;
+                this.Close();
+                Application.Exit();
+            }
         }
     }
 }

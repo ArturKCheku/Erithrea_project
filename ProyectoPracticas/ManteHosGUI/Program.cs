@@ -23,6 +23,15 @@ namespace ManteHosGUI
             IDAL dal = new EntityFrameworkDAL(new ManteHosDbContext());
             IManteHosService service = new ManteHosService(dal);
 
+            try
+            {
+                service.DBInitialization();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al inicializar la BD: " + ex.Message);
+            }
+
             bool userExit = false;
 
             while (!userExit)
@@ -46,7 +55,7 @@ namespace ManteHosGUI
                 }
             }
 
-            Application.Run(new MainGUI(service));
+            //Application.Run(new MainGUI(service));
         }
     }
 }

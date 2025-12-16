@@ -81,6 +81,77 @@ namespace ManteHos.Services
             Part p3 = new Part("ClimaEst", 4, "Cristal Climalit de ventana estándar", 0, "Cristal 75x100cms", 200);
             AddPart(p3);
 
+            Console.WriteLine("\n// CREACIÓN DE INCIDENTES");
+            Incident incident1 = new Incident("Mecánica", "Fuga de agua", DateTime.Now, empleado1);
+            incident1.Area = a1;
+            incident1.Status = Status.InProgress;
+            dal.Insert<Incident>(incident1);
+            dal.Commit();
+
+            Incident incident2 = new Incident("Electricidad", "Fuga", DateTime.Now, op3);
+            incident1.Area = a2;
+            incident1.Status = Status.InProgress;
+            dal.Insert<Incident>(incident2);
+            dal.Commit();
+
+            WorkOrder w1 = new WorkOrder
+            {
+                StartDate = DateTime.Now,
+                EndDate = null,
+                RepairReport = "some",
+                Incident = incident1,
+                Operators = new List<Operator> { op1 }
+
+
+
+            }; dal.Insert<WorkOrder>(w1);
+            dal.Commit();
+
+
+
+            UsedPart up1 = new UsedPart
+            {
+                Part = p1,
+                Quantity = 2,
+                Needed = true
+            };
+            dal.Insert<UsedPart>(up1);
+            dal.Commit();
+
+            w1.UsedParts.Add(up1);
+            p1.UsedParts.Add(up1);
+            p1.CurrentQuantity -= up1.Quantity;
+            dal.Commit();
+
+
+            WorkOrder w2 = new WorkOrder
+            {
+                StartDate = DateTime.Now,
+                EndDate = null,
+                RepairReport = "some2",
+                Incident = incident2,
+                Operators = new List<Operator> { op1 }
+
+
+
+            }; dal.Insert<WorkOrder>(w2);
+            dal.Commit();
+
+            UsedPart up2 = new UsedPart
+            {
+                Part = p2,
+                Quantity = 3,
+                Needed = false
+            };
+
+
+
+            w2.UsedParts.Add(up2);
+            p2.UsedParts.Add(up2);
+            
+            dal.Insert<UsedPart>(up2);
+            dal.Commit();
+
         }
 
         public void AddPerson(Employee person)
