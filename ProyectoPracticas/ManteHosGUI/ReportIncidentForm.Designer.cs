@@ -43,7 +43,6 @@
             this.descrLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descrLabel.AutoSize = true;
-            this.descrLabel.Enabled = false;
             this.descrLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descrLabel.Location = new System.Drawing.Point(44, 155);
             this.descrLabel.Name = "descrLabel";
@@ -69,7 +68,6 @@
             this.DepLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DepLabel.AutoSize = true;
-            this.DepLabel.Enabled = false;
             this.DepLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DepLabel.Location = new System.Drawing.Point(44, 62);

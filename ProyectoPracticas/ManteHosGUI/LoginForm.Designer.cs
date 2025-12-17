@@ -92,7 +92,7 @@
             // 
             this.SignIn.AutoSize = true;
             this.SignIn.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignIn.Location = new System.Drawing.Point(156, 107);
+            this.SignIn.Location = new System.Drawing.Point(175, 107);
             this.SignIn.Margin = new System.Windows.Forms.Padding(0);
             this.SignIn.Name = "SignIn";
             this.SignIn.Size = new System.Drawing.Size(203, 33);
@@ -213,7 +213,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ManteHosGUI.Properties.Resources.logo2;
-            this.pictureBox4.Location = new System.Drawing.Point(163, 15);
+            this.pictureBox4.Location = new System.Drawing.Point(161, 14);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(243, 89);

@@ -121,7 +121,7 @@
             // 
             this.rdbAccept.AutoSize = true;
             this.rdbAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rdbAccept.Location = new System.Drawing.Point(104, 409);
+            this.rdbAccept.Location = new System.Drawing.Point(90, 409);
             this.rdbAccept.Margin = new System.Windows.Forms.Padding(4);
             this.rdbAccept.Name = "rdbAccept";
             this.rdbAccept.Size = new System.Drawing.Size(174, 29);
@@ -134,7 +134,7 @@
             // 
             this.rbtReject.AutoSize = true;
             this.rbtReject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rbtReject.Location = new System.Drawing.Point(479, 409);
+            this.rbtReject.Location = new System.Drawing.Point(440, 409);
             this.rbtReject.Margin = new System.Windows.Forms.Padding(4);
             this.rbtReject.Name = "rbtReject";
             this.rbtReject.Size = new System.Drawing.Size(178, 29);

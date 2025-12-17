@@ -57,82 +57,79 @@
             this.tancarWorkOrdresToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(904, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1205, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // reportarIncidenciaToolStripMenuItem1
             // 
             this.reportarIncidenciaToolStripMenuItem1.Name = "reportarIncidenciaToolStripMenuItem1";
-            this.reportarIncidenciaToolStripMenuItem1.Size = new System.Drawing.Size(121, 20);
+            this.reportarIncidenciaToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
             this.reportarIncidenciaToolStripMenuItem1.Text = "Reportar Incidencia";
             this.reportarIncidenciaToolStripMenuItem1.Click += new System.EventHandler(this.reportarIncidenciaToolStripMenuItem_Click);
             // 
             // revisarIncidenciaToolStripMenuItem1
             // 
             this.revisarIncidenciaToolStripMenuItem1.Name = "revisarIncidenciaToolStripMenuItem1";
-            this.revisarIncidenciaToolStripMenuItem1.Size = new System.Drawing.Size(113, 20);
+            this.revisarIncidenciaToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
             this.revisarIncidenciaToolStripMenuItem1.Text = "Revisar Incidencia";
             this.revisarIncidenciaToolStripMenuItem1.Click += new System.EventHandler(this.revisarIncidenciaToolStripMenuItem_Click);
             // 
             // asignarWorkOrdresToolStripMenuItem1
             // 
             this.asignarWorkOrdresToolStripMenuItem1.Name = "asignarWorkOrdresToolStripMenuItem1";
-            this.asignarWorkOrdresToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
+            this.asignarWorkOrdresToolStripMenuItem1.Size = new System.Drawing.Size(155, 26);
             this.asignarWorkOrdresToolStripMenuItem1.Text = "Asignar WorkOrdres";
             this.asignarWorkOrdresToolStripMenuItem1.Click += new System.EventHandler(this.asignarWorkOrdresToolStripMenuItem_Click);
             // 
             // tancarWorkOrdresToolStripMenuItem1
             // 
             this.tancarWorkOrdresToolStripMenuItem1.Name = "tancarWorkOrdresToolStripMenuItem1";
-            this.tancarWorkOrdresToolStripMenuItem1.Size = new System.Drawing.Size(120, 20);
+            this.tancarWorkOrdresToolStripMenuItem1.Size = new System.Drawing.Size(147, 26);
             this.tancarWorkOrdresToolStripMenuItem1.Text = "Tancar WorkOrdres";
             this.tancarWorkOrdresToolStripMenuItem1.Click += new System.EventHandler(this.tancarWorkOrdresToolStripMenuItem_Click);
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(31, 44);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F);
+            this.lblWelcome.Location = new System.Drawing.Point(41, 54);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(299, 73);
+            this.lblWelcome.Size = new System.Drawing.Size(402, 104);
             this.lblWelcome.TabIndex = 3;
             this.lblWelcome.Text = "Welcome";
             // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Location = new System.Drawing.Point(31, 144);
-            this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRol.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F);
+            this.lblRol.Location = new System.Drawing.Point(41, 177);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(128, 73);
+            this.lblRol.Size = new System.Drawing.Size(168, 104);
             this.lblRol.TabIndex = 4;
             this.lblRol.Text = "Rol";
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(770, 7);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStatus.Location = new System.Drawing.Point(1027, 9);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(136, 13);
+            this.lblStatus.Size = new System.Drawing.Size(166, 16);
             this.lblStatus.TabIndex = 5;
             this.lblStatus.Text = "Estat de la Xarxa: Conectat";
             // 
@@ -143,9 +140,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = global::ManteHosGUI.Properties.Resources.logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 80);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 98);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(919, 357);
+            this.pictureBox1.Size = new System.Drawing.Size(1225, 439);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -153,16 +151,17 @@
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(2330, 1947);
+            this.pictureBox2.Size = new System.Drawing.Size(3107, 2396);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
             // MainGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 424);
+            this.ClientSize = new System.Drawing.Size(1205, 522);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblWelcome);
@@ -171,6 +170,7 @@
             this.Controls.Add(this.pictureBox2);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainGUI";
             this.Text = "ManteHos App";
             this.TransparencyKey = System.Drawing.Color.White;
