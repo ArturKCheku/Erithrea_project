@@ -131,5 +131,10 @@ namespace ManteHosGUI
         {
             this.Close();
         }
+
+        private void cbArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

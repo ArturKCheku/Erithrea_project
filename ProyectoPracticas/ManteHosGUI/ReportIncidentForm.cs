@@ -70,7 +70,7 @@ namespace ManteHosGUI
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (DbEntityValidationException ex)
+           /* catch (DbEntityValidationException ex)
             {
                 string errores = "";
 
@@ -82,7 +82,7 @@ namespace ManteHosGUI
                     }
                 }
                 MessageBox.Show("Error de validación en BD:\n" + errores, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
             catch (Exception ex)
             {
                 MessageBox.Show("Error inesperado: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);

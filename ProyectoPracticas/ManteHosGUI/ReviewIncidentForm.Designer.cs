@@ -52,14 +52,14 @@
             this.dgvIncidents.AllowUserToDeleteRows = false;
             this.dgvIncidents.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvIncidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIncidents.Location = new System.Drawing.Point(11, 59);
-            this.dgvIncidents.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvIncidents.Location = new System.Drawing.Point(12, 74);
+            this.dgvIncidents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvIncidents.MultiSelect = false;
             this.dgvIncidents.Name = "dgvIncidents";
             this.dgvIncidents.ReadOnly = true;
             this.dgvIncidents.RowHeadersWidth = 51;
             this.dgvIncidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIncidents.Size = new System.Drawing.Size(703, 314);
+            this.dgvIncidents.Size = new System.Drawing.Size(791, 392);
             this.dgvIncidents.TabIndex = 0;
             // 
             // grpAcceptData
@@ -68,11 +68,11 @@
             this.grpAcceptData.Controls.Add(this.label2);
             this.grpAcceptData.Controls.Add(this.cbArea);
             this.grpAcceptData.Controls.Add(this.label1);
-            this.grpAcceptData.Location = new System.Drawing.Point(16, 489);
-            this.grpAcceptData.Margin = new System.Windows.Forms.Padding(4);
+            this.grpAcceptData.Location = new System.Drawing.Point(18, 611);
+            this.grpAcceptData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpAcceptData.Name = "grpAcceptData";
-            this.grpAcceptData.Padding = new System.Windows.Forms.Padding(4);
-            this.grpAcceptData.Size = new System.Drawing.Size(320, 143);
+            this.grpAcceptData.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpAcceptData.Size = new System.Drawing.Size(360, 179);
             this.grpAcceptData.TabIndex = 1;
             this.grpAcceptData.TabStop = false;
             this.grpAcceptData.Text = "Aceptar";
@@ -81,19 +81,19 @@
             // 
             this.cbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPriority.FormattingEnabled = true;
-            this.cbPriority.Location = new System.Drawing.Point(88, 74);
-            this.cbPriority.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPriority.Location = new System.Drawing.Point(99, 92);
+            this.cbPriority.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbPriority.Name = "cbPriority";
-            this.cbPriority.Size = new System.Drawing.Size(160, 24);
+            this.cbPriority.Size = new System.Drawing.Size(180, 28);
             this.cbPriority.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 78);
+            this.label2.Location = new System.Drawing.Point(9, 98);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Prioritat";
             // 
@@ -101,19 +101,20 @@
             // 
             this.cbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbArea.FormattingEnabled = true;
-            this.cbArea.Location = new System.Drawing.Point(88, 31);
-            this.cbArea.Margin = new System.Windows.Forms.Padding(4);
+            this.cbArea.Location = new System.Drawing.Point(99, 39);
+            this.cbArea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbArea.Name = "cbArea";
-            this.cbArea.Size = new System.Drawing.Size(160, 24);
+            this.cbArea.Size = new System.Drawing.Size(180, 28);
             this.cbArea.TabIndex = 1;
+            this.cbArea.SelectedIndexChanged += new System.EventHandler(this.cbArea_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 31);
+            this.label1.Location = new System.Drawing.Point(28, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 16);
+            this.label1.Size = new System.Drawing.Size(43, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Area";
             // 
@@ -121,10 +122,10 @@
             // 
             this.rdbAccept.AutoSize = true;
             this.rdbAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rdbAccept.Location = new System.Drawing.Point(90, 409);
-            this.rdbAccept.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbAccept.Location = new System.Drawing.Point(101, 511);
+            this.rdbAccept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdbAccept.Name = "rdbAccept";
-            this.rdbAccept.Size = new System.Drawing.Size(174, 29);
+            this.rdbAccept.Size = new System.Drawing.Size(210, 33);
             this.rdbAccept.TabIndex = 5;
             this.rdbAccept.Text = "Aceptar Incident";
             this.rdbAccept.UseVisualStyleBackColor = true;
@@ -134,10 +135,10 @@
             // 
             this.rbtReject.AutoSize = true;
             this.rbtReject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rbtReject.Location = new System.Drawing.Point(440, 409);
-            this.rbtReject.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtReject.Location = new System.Drawing.Point(495, 511);
+            this.rbtReject.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbtReject.Name = "rbtReject";
-            this.rbtReject.Size = new System.Drawing.Size(178, 29);
+            this.rbtReject.Size = new System.Drawing.Size(219, 33);
             this.rbtReject.TabIndex = 6;
             this.rbtReject.Text = "Rebutjar Incident";
             this.rbtReject.UseVisualStyleBackColor = true;
@@ -147,43 +148,44 @@
             // 
             this.grpRejectData.Controls.Add(this.txtRejectReason);
             this.grpRejectData.Controls.Add(this.label4);
-            this.grpRejectData.Location = new System.Drawing.Point(369, 489);
-            this.grpRejectData.Margin = new System.Windows.Forms.Padding(4);
+            this.grpRejectData.Location = new System.Drawing.Point(415, 611);
+            this.grpRejectData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpRejectData.Name = "grpRejectData";
-            this.grpRejectData.Padding = new System.Windows.Forms.Padding(4);
-            this.grpRejectData.Size = new System.Drawing.Size(349, 143);
+            this.grpRejectData.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpRejectData.Size = new System.Drawing.Size(393, 179);
             this.grpRejectData.TabIndex = 7;
             this.grpRejectData.TabStop = false;
             this.grpRejectData.Text = "Rebutjar";
             // 
             // txtRejectReason
             // 
-            this.txtRejectReason.Location = new System.Drawing.Point(91, 37);
-            this.txtRejectReason.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRejectReason.Location = new System.Drawing.Point(102, 46);
+            this.txtRejectReason.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRejectReason.Multiline = true;
             this.txtRejectReason.Name = "txtRejectReason";
-            this.txtRejectReason.Size = new System.Drawing.Size(188, 83);
+            this.txtRejectReason.Size = new System.Drawing.Size(211, 103);
             this.txtRejectReason.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 41);
+            this.label4.Location = new System.Drawing.Point(30, 51);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 16);
+            this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Motiu";
             // 
             // btnProcess
             // 
+            this.btnProcess.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnProcess.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnProcess.Location = new System.Drawing.Point(460, 668);
-            this.btnProcess.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProcess.Location = new System.Drawing.Point(518, 835);
+            this.btnProcess.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(203, 44);
+            this.btnProcess.Size = new System.Drawing.Size(228, 55);
             this.btnProcess.TabIndex = 8;
             this.btnProcess.Text = "Processar Incidencia";
             this.btnProcess.UseVisualStyleBackColor = false;
@@ -191,11 +193,12 @@
             // 
             // CancelBtn
             // 
+            this.CancelBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CancelBtn.Location = new System.Drawing.Point(69, 668);
-            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.CancelBtn.Location = new System.Drawing.Point(78, 835);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(195, 44);
+            this.CancelBtn.Size = new System.Drawing.Size(219, 55);
             this.CancelBtn.TabIndex = 9;
             this.CancelBtn.Text = "Cancelar";
             this.CancelBtn.UseVisualStyleBackColor = true;
@@ -203,10 +206,10 @@
             // 
             // ReviewIncidentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(729, 754);
+            this.ClientSize = new System.Drawing.Size(820, 942);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.rbtReject);
@@ -214,7 +217,7 @@
             this.Controls.Add(this.rdbAccept);
             this.Controls.Add(this.grpAcceptData);
             this.Controls.Add(this.dgvIncidents);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ReviewIncidentForm";
             this.Text = "ReviewIncidentForm";
             this.Load += new System.EventHandler(this.ReviewIncidentForm_Load);
