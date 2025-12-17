@@ -59,7 +59,7 @@
             this.ExitB.Name = "ExitB";
             this.ExitB.Size = new System.Drawing.Size(119, 44);
             this.ExitB.TabIndex = 2;
-            this.ExitB.Text = "Salir";
+            this.ExitB.Text = " Cancelar";
             this.ExitB.UseVisualStyleBackColor = true;
             this.ExitB.Click += new System.EventHandler(this.ExitB_Click);
             // 
@@ -80,6 +80,8 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtId.Location = new System.Drawing.Point(48, 0);
@@ -151,6 +153,8 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPassword.Location = new System.Drawing.Point(48, 0);

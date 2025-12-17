@@ -179,17 +179,19 @@
             // 
             this.btnProcess.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnProcess.Location = new System.Drawing.Point(460, 668);
             this.btnProcess.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(195, 44);
+            this.btnProcess.Size = new System.Drawing.Size(203, 44);
             this.btnProcess.TabIndex = 8;
-            this.btnProcess.Text = "Preocessar Incidencia";
+            this.btnProcess.Text = "Processar Incidencia";
             this.btnProcess.UseVisualStyleBackColor = false;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // CancelBtn
             // 
+            this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CancelBtn.Location = new System.Drawing.Point(69, 668);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelBtn.Name = "CancelBtn";

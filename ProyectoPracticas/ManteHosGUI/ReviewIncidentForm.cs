@@ -124,6 +124,7 @@ namespace ManteHosGUI
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateUIState();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
