@@ -22,43 +22,58 @@ namespace ManteHosGUI
         {
             InitializeComponent();
             this.service = service;
-            ReportB.Enabled = false;
-        }
-
-        private void ButtonState()
-        {
-            bool isDepartFull = !string.IsNullOrWhiteSpace(txtDepartment.Text);
-            bool isDescFull = !string.IsNullOrEmpty(txtDescripcio.Text);
-
-            ReportB.Enabled = isDepartFull && isDescFull;
+            RestriccioDep.Visible = false;
+            RestriccioDesc.Visible = false;
         }
 
         private void ReportB_Click(object sender, EventArgs e)
         {
+            RestriccioDep.Visible = false;
+            RestriccioDesc.Visible = false;
+            bool hayError = false;
+
+            if (string.IsNullOrWhiteSpace(txtDepartment.Text))
+            {
+                RestriccioDep.Text = "El departament és obligatorio";
+                RestriccioDep.Visible = true;
+                hayError = true;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDescripcio.Text))
+            {
+                RestriccioDesc.Text = "La descripció és obligatoria";
+
+                RestriccioDesc.Visible = true;
+
+                hayError = true;
+            }
+
+            if (hayError)
+            {
+                return;
+            }
+
             Incident incident = new Incident()
             {
                 Department = txtDepartment.Text,
                 Description = txtDescripcio.Text
-
             };
+
             try
             {
                 service.reportIncident(incident);
-
-                MessageBox.Show("Incidencia reportada con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Incidència reportada amb éxit.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-
             }
             catch (ServiceException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (DbEntityValidationException ex) // <--- AQUÍ ESTÁ LA MAGIA
+            catch (DbEntityValidationException ex)
             {
-                // Este código recorre los errores ocultos de Entity Framework
                 string errores = "";
+
                 foreach (var validationErrors in ex.EntityValidationErrors)
                 {
                     foreach (var validationError in validationErrors.ValidationErrors)
@@ -72,7 +87,6 @@ namespace ManteHosGUI
             {
                 MessageBox.Show("Error inesperado: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void CancelB_Click(object sender, EventArgs e)
@@ -82,7 +96,7 @@ namespace ManteHosGUI
 
         private void ValidarTexto(object sender, EventArgs e)
         {
-            ButtonState();
+
         }
     }
 }
