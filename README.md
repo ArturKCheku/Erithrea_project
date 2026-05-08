@@ -11,7 +11,7 @@ El sistema permite la gestión de diversas entidades y procesos académicos:
 * **Ciclo de Matriculación**: Implementación del proceso de alta de alumnos y matriculación en asignaturas específicas].
 * **Gestión de Calificaciones**: Sistema para la generación y cierre de actas de evaluación.
 
-## 🏗️ Hitos del Desarrollo
+## Hitos del Desarrollo
 El desarrollo se estructuró en las siguientes fases de ingeniería:
 * **Ingeniería de Requisitos**: Identificación de actores y definición de requisitos funcionales del sistema.
 * **Modelado de Casos de Uso**: Documentación detallada de las funcionalidades y flujos de eventos.
@@ -19,7 +19,7 @@ El desarrollo se estructuró en las siguientes fases de ingeniería:
 * **Diseño del Comportamiento**: Elaboración de diagramas de secuencia para modelar la lógica de las operaciones del sistema.
 * **Implementación de Interfaz (IGU)**: Desarrollo de la capa de presentación utilizando Java para facilitar la interacción del usuario.
 
-## 💻 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 * **Lenguaje**: Java.
 * **Modelado**: Lenguaje Unificado de Modelado (UML) para el diseño de arquitectura y comportamiento.
 * **Metodología**: Ingeniería de software orientada a objetos.
